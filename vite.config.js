@@ -1,6 +1,6 @@
 import { resolve } from 'node:path';
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 const __dirname = new URL('.', import.meta.url).pathname;
 
@@ -11,7 +11,7 @@ export default defineConfig({
     rollupOptions: {
       markup: {
         main: resolve(__dirname, 'markup.html'),
-      }
-    }
-  }
-})
+      },
+    },
+  },
+});

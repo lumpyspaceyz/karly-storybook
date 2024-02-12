@@ -1,1462 +1,1768 @@
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>마켓 베스트 - 칼리</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            content: ['./index.html', './src/**/**/*.{html,js,ts,jsx,tsx}'],
-            theme: {
-                extend: {
-                    colors: {
-                        black: '#000000',
-                        secondary: '#bd76ff',
-                        white: '#ffffff',
-                        primary: '#5f0080',
-                        content: '#333333',
-                        gray: {
-                            50: '#f9f9f9',
-                            100: '#e1e1e1',
-                            200: '#c4c4c4',
-                            300: '#a6a6a6',
-                            400: '#898989',
-                            500: '#6b6b6b',
-                            600: '#565656',
-                            700: '#404040',
-                            800: '#2b2b2b',
-                            900: '#151515',
-                            divider: '#d9d9d9',
-                        },
-                        accent: {yellow: '#fa622f'},
-                        blue: {
-                            100: '#cce0ff',
-                            200: '#99c2ff',
-                            300: '#66a3ff',
-                            400: '#3385ff',
-                            500: '#0066ff',
-                            600: '#0052cc',
-                            700: '#003d99',
-                            800: '#002966',
-                            900: '#001433',
-                        },
-                        Info: {Error: '#f03f40'},
-                    },
-                    fontSize: {
-                        sm: '12px',
-                        base: '16px',
-                        lg: '21.3px',
-                        xl: '28.4px',
-                        '2xl': '37.9px',
-                        '3xl': '50.5px',
-                        // Heading
-                        'h-base': ['16px', {lineHeight: '140%', fontWeight: '700'}],
-                        'h-lg': ['21.3px', {lineHeight: '140%', fontWeight: '700'}],
-                        'h-xl': ['28.4px', {lineHeight: '140%', fontWeight: '700'}],
-                        'h-2xl': ['37.9px', {lineHeight: '140%', fontWeight: '700'}],
-                        'h-3xl': ['50.5px', {lineHeight: '140%', fontWeight: '700'}],
-                        // Label
-                        'l-sm': ['12px', {lineHeight: '150%', fontWeight: '600'}],
-                        'l-base': ['16px', {lineHeight: '150%', fontWeight: '600'}],
-                        'l-lg': ['21.3px', {lineHeight: '150%', fontWeight: '600'}],
-                        'l-xl': ['28.4px', {lineHeight: '150%', fontWeight: '600'}],
-                        'l-2xl': ['37.9px', {lineHeight: '150%', fontWeight: '600'}],
-                        // Paragraph
-                        'p-xsm': ['10px', {lineHeight: '160%', fontWeight: '400'}],
-                        'p-sm': ['12px', {lineHeight: '160%', fontWeight: '400'}],
-                        'p-wsm': ['12px', {lineHeight: '150%', fontWeight: '400'}],
-                        'p-base': ['16px', {lineHeight: '160%', fontWeight: '400'}],
-                        'p-lg': ['21.3px', {lineHeight: '160%', fontWeight: '400'}],
-                        'p-xl': ['28.4px', {lineHeight: '160%', fontWeight: '400'}],
-                    },
-                    fontFamily: {sans: 'Pretendard-Regular'},
-                    width: {
-                        innerWrapper: '1050px',
-                        'productBox-width': '249px',
-                        100: '400px',
-                        61.75: '247px',
-                        48.5: '194px',
-                        7.5: '30px',
-                        75: '300px',
-                        78.75: '315px',
-                        85: '340px',
-                        140: '560px',
-                        262.5: '1050px',
-                    },
-                    height: {
-                        'productBox-height': '538px',
-                        3.25: '13px',
-                        7.5: '30px',
-                        13: '52px',
-                        13.5: '54px',
-                        18: '72px',
-                        167.5: '670px',
-                    },
-                    inset: {
-                        'productBox-cart-top': '258px',
-                        'productBox-cart-left': '189px',
-                        18: '72px',
-                    },
-                    spacing: {
-                        3.25: '13px',
-                        5.25: '21px',
-                        7.25: '29px',
-                        13.5: '54px',
-                    },
-                    backgroundImage: {
-                        input__button: "url('/src/assets/svg/input-button.svg')",
-                    },
-                    backgroundPosition: {
-                        'radio--no': 'left top',
-                        'radio--yes': 'left bottom',
-                        'check--no': 'right top',
-                        'check--yes': 'right bottom',
-                    },
-                },
-                animation: {
-                    'bubble-fadeIn': 'fadeIn 3s',
-                },
-                keyframes: {
-                    fadeIn: {
-                        '0%': {opacity: 0},
-                        '30%': {opacity: 1},
-                        '80%': {opacity: 1},
-                        '100%': {opacity: 0},
-                    },
-                },
+      tailwind.config = {
+        content: ['./index.html', './src/**/**/*.{html,js,ts,jsx,tsx}'],
+        theme: {
+          extend: {
+            colors: {
+              black: '#000000',
+              secondary: '#bd76ff',
+              white: '#ffffff',
+              primary: '#5f0080',
+              content: '#333333',
+              gray: {
+                50: '#f9f9f9',
+                100: '#e1e1e1',
+                200: '#c4c4c4',
+                300: '#a6a6a6',
+                400: '#898989',
+                500: '#6b6b6b',
+                600: '#565656',
+                700: '#404040',
+                800: '#2b2b2b',
+                900: '#151515',
+                divider: '#d9d9d9',
+              },
+              accent: {
+                yellow: '#fa622f',
+              },
+              blue: {
+                100: '#cce0ff',
+                200: '#99c2ff',
+                300: '#66a3ff',
+                400: '#3385ff',
+                500: '#0066ff',
+                600: '#0052cc',
+                700: '#003d99',
+                800: '#002966',
+                900: '#001433',
+              },
+              Info: {
+                Error: '#f03f40',
+              },
             },
-        }
+            fontSize: {
+              sm: '12px',
+              base: '16px',
+              lg: '21.3px',
+              xl: '28.4px',
+              '2xl': '37.9px',
+              '3xl': '50.5px',
+              // Heading
+              'h-base': [
+                '16px',
+                {
+                  lineHeight: '140%',
+                  fontWeight: '700',
+                },
+              ],
+              'h-lg': [
+                '21.3px',
+                {
+                  lineHeight: '140%',
+                  fontWeight: '700',
+                },
+              ],
+              'h-xl': [
+                '28.4px',
+                {
+                  lineHeight: '140%',
+                  fontWeight: '700',
+                },
+              ],
+              'h-2xl': [
+                '37.9px',
+                {
+                  lineHeight: '140%',
+                  fontWeight: '700',
+                },
+              ],
+              'h-3xl': [
+                '50.5px',
+                {
+                  lineHeight: '140%',
+                  fontWeight: '700',
+                },
+              ],
+              // Label
+              'l-sm': [
+                '12px',
+                {
+                  lineHeight: '150%',
+                  fontWeight: '600',
+                },
+              ],
+              'l-base': [
+                '16px',
+                {
+                  lineHeight: '150%',
+                  fontWeight: '600',
+                },
+              ],
+              'l-lg': [
+                '21.3px',
+                {
+                  lineHeight: '150%',
+                  fontWeight: '600',
+                },
+              ],
+              'l-xl': [
+                '28.4px',
+                {
+                  lineHeight: '150%',
+                  fontWeight: '600',
+                },
+              ],
+              'l-2xl': [
+                '37.9px',
+                {
+                  lineHeight: '150%',
+                  fontWeight: '600',
+                },
+              ],
+              // Paragraph
+              'p-xsm': [
+                '10px',
+                {
+                  lineHeight: '160%',
+                  fontWeight: '400',
+                },
+              ],
+              'p-sm': [
+                '12px',
+                {
+                  lineHeight: '160%',
+                  fontWeight: '400',
+                },
+              ],
+              'p-wsm': [
+                '12px',
+                {
+                  lineHeight: '150%',
+                  fontWeight: '400',
+                },
+              ],
+              'p-base': [
+                '16px',
+                {
+                  lineHeight: '160%',
+                  fontWeight: '400',
+                },
+              ],
+              'p-lg': [
+                '21.3px',
+                {
+                  lineHeight: '160%',
+                  fontWeight: '400',
+                },
+              ],
+              'p-xl': [
+                '28.4px',
+                {
+                  lineHeight: '160%',
+                  fontWeight: '400',
+                },
+              ],
+            },
+            fontFamily: {
+              sans: 'Pretendard-Regular',
+            },
+            width: {
+              innerWrapper: '1050px',
+              'productBox-width': '249px',
+              100: '400px',
+              61.75: '247px',
+              48.5: '194px',
+              7.5: '30px',
+              75: '300px',
+              78.75: '315px',
+              85: '340px',
+              140: '560px',
+              262.5: '1050px',
+            },
+            height: {
+              'productBox-height': '538px',
+              3.25: '13px',
+              7.5: '30px',
+              13: '52px',
+              13.5: '54px',
+              18: '72px',
+              167.5: '670px',
+            },
+            inset: {
+              'productBox-cart-top': '258px',
+              'productBox-cart-left': '189px',
+              18: '72px',
+            },
+            spacing: {
+              3.25: '13px',
+              5.25: '21px',
+              7.25: '29px',
+              13.5: '54px',
+            },
+            backgroundImage: {
+              input__button: "url('/src/assets/svg/input-button.svg')",
+            },
+            backgroundPosition: {
+              'radio--no': 'left top',
+              'radio--yes': 'left bottom',
+              'check--no': 'right top',
+              'check--yes': 'right bottom',
+            },
+          },
+          animation: {
+            'bubble-fadeIn': 'fadeIn 3s',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': {
+                opacity: 0,
+              },
+              '30%': {
+                opacity: 1,
+              },
+              '80%': {
+                opacity: 1,
+              },
+              '100%': {
+                opacity: 0,
+              },
+            },
+          },
+        },
+      };
     </script>
-</head>
-<body>
-<header class="mx-auto my-0 w-innerWrapper">
-    <h1 class="sr-only">마켓칼리</h1>
-    <div class="header__div-top flex h-13 items-center justify-end">
+  </head>
+  <body>
+    <header class="mx-auto my-0 w-innerWrapper">
+      <h1 class="sr-only">마켓칼리</h1>
+      <div class="header__div-top flex h-13 items-center justify-end">
         <a href="#" class="px-3 text-p-sm text-primary">회원가입</a>
         <div class="h-3.25 w-px border-r text-gray-divider"></div>
         <a href="#" class="px-3 text-p-sm text-content">로그인</a>
         <div class="h-3.25 w-px border-r text-gray-divider"></div>
         <div class="group relative flex h-full cursor-pointer items-center gap-1 px-3 text-p-sm text-content">
-            <span>고객센터</span>
-            <svg role="img" width="8" height="5.6" viewBox="0 0 11 7">
-                <use href="/icons/_sprite.svg#down"></use>
-            </svg>
-            <div class="group invisible absolute right-3 top-10 w-32 border border-gray-divider bg-white p-2 group-hover:visible z-10">
-                <ul class="flex list-none flex-col gap-1">
-                    <li>
-                        <a href="#">공지사항</a>
-                    </li>
-                    <li>
-                        <a href="#">자주하는 질문</a>
-                    </li>
-                    <li>
-                        <a href="#">1:1 문의</a>
-                    </li>
-                    <li>
-                        <a href="#">대량주문 문의</a>
-                    </li>
-                </ul>
-            </div>
+          <span>고객센터</span>
+          <svg role="img" width="8" height="5.6" viewBox="0 0 11 7">
+            <use href="/icons/_sprite.svg#down"></use>
+          </svg>
+          <div
+            class="group invisible absolute right-3 top-10 w-32 border border-gray-divider bg-white p-2 group-hover:visible z-10"
+          >
+            <ul class="flex list-none flex-col gap-1">
+              <li>
+                <a href="#">공지사항</a>
+              </li>
+              <li>
+                <a href="#">자주하는 질문</a>
+              </li>
+              <li>
+                <a href="#">1:1 문의</a>
+              </li>
+              <li>
+                <a href="#">대량주문 문의</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </div>
-    <div class="mb-3.25 flex items-center justify-between">
+      </div>
+      <div class="mb-3.25 flex items-center justify-between">
         <div class="flex items-center gap-3">
-            <a href="#">
-                <svg role="img" width="82" height="42" viewBox="0 0 82 42">
-                    <use href="/logo.svg#logo"></use>
-                    <title>마켓칼리 로고</title>
-                </svg>
-            </a>
-            <a href="#" class="text-l-lg text-primary">마켓칼리</a>
-            <div class="h-3.5 border-r text-gray-divider"></div>
-            <a href="#" class="text-l-lg text-gray-400">뷰티칼리</a>
+          <a href="#">
+            <svg role="img" width="82" height="42" viewBox="0 0 82 42">
+              <use href="/logo.svg#logo"></use>
+              <title>마켓칼리 로고</title>
+            </svg>
+          </a>
+          <a href="#" class="text-l-lg text-primary">마켓칼리</a>
+          <div class="h-3.5 border-r text-gray-divider"></div>
+          <a href="#" class="text-l-lg text-gray-400">뷰티칼리</a>
         </div>
         <div class="relative">
-            <form>
-                <input type="text"
-                       name="keyword"
-                       class="w-100 rounded border border-primary px-5 py-3 text-p-lg text-gray-400 focus:outline-primary"
-                       placeholder="검색어를 입력해주세요">
-                <button type="submit">
-                    <svg class="absolute right-5 top-3" role="img" width="36" height="36" viewBox="0 0 36 36">
-                        <use href="/icons/_sprite.svg#search"></use>
-                    </svg>
-                </button>
-            </form>
+          <form>
+            <input
+              type="text"
+              name="keyword"
+              class="w-100 rounded border border-primary px-5 py-3 text-p-lg text-gray-400 focus:outline-primary"
+              placeholder="검색어를 입력해주세요"
+            />
+            <button type="submit">
+              <svg class="absolute right-5 top-3" role="img" width="36" height="36" viewBox="0 0 36 36">
+                <use href="/icons/_sprite.svg#search"></use>
+              </svg>
+            </button>
+          </form>
         </div>
         <div class="relative flex gap-5">
-            <button type="button">
-                <svg role="img" width="36" height="36" viewBox="0 0 36 36">
-                    <use href="/icons/_sprite.svg#icons"></use>
-                </svg>
-            </button>
-            <button type="button">
-                <svg role="img" width="36" height="36" viewBox="56 0 36 36">
-                    <use href="/icons/_sprite.svg#icons"></use>
-                </svg>
-            </button>
-            <a href="#" class="header__a-cart-origin relative">
-                <svg role="img" width="36" height="36" viewBox="112 0 36 36">
-                    <use href="/icons/_sprite.svg#icons"></use>
-                </svg>
-
-                <div class="header__cart-badge absolute -right-1 top-0.5 rounded-full bg-primary px-[5px] text-center text-[9px] text-white">
-                    13
-                </div>
-            </a>
-            <div class="header__bubble absolute right-0 top-12 z-10 hidden h-[100px] w-[254px] animate-bubble-fadeIn border border-gray-200 bg-white p-5">
-                <figure class="flex gap-5">
-                    <img src="" alt="" class="header__bubble-img h-[60px] w-[46px]">
-                    <div>
-                        <figcaption class="header__bubble-figcaption mb-2 text-l-sm text-gray-300"></figcaption>
-                        <p class="header__bubble-p text-p-sm text-content">
-                            장바구니에 상품을 담았습니다.
-                        </p>
-                    </div>
-                </figure>
-            </div>
-        </div>
-    </div>
-    <nav class="flex h-18 items-center justify-between">
-        <div class="group relative flex h-18 items-center gap-3">
-            <svg role="img" width="16" height="14" viewBox="0 0 16 14">
-                <use href="/icons/_sprite.svg#hamburger-black"></use>
+          <button type="button">
+            <svg role="img" width="36" height="36" viewBox="0 0 36 36">
+              <use href="/icons/_sprite.svg#icons"></use>
             </svg>
-            <span>카테고리</span>
-            <div class="invisible absolute left-0 top-18 z-20 w-61.75 border-b border-l border-r border-gray-divider bg-white px-3 py-2 group-hover:visible">
-                <ul class="flex flex-col gap-2">
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="21 18 59 61">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>선물하기</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="21 744 59.8 65.5">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>채소</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="10 1317 80 54">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>과일 · 견과 · 쌀</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="22 1716 58 67">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>수산 · 해산 · 건어물</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="17 265 68 55">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>정육 · 계란</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="17 586 67 61">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>국 · 반찬 · 메인요리</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="17 1155 70 58">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>샐러드 · 간편식</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="20 828 63 63">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>면 · 양념 · 오일</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="24 429 66 37">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>생수 · 음료 · 우유 · 커피</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="18 989 64 62">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>간식 · 과자 · 떡</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="18 186 68 49">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>베이커리 · 치즈 · 델리</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="13 1630 75 70">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>건강식품</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="22 1472 57 70">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>와인</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="21 95 58 69">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>전통주</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="21 336 50 75">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>생활용품 · 리빙 · 캠핑</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="17 503 67 62">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>스킨케어 · 메이크업</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="19 1391 63 68">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>헤어 · 바디 · 구강</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="19 664 62 64">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>주방용품</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="23 904 54 69">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>가전제품</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="21 1070 57 64">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>반려동물</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="22 1228 57 70">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>베이비 · 키즈 · 완구</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="flex gap-2">
-                            <svg role="img" width="24" height="24" viewBox="17 1556 67 59">
-                                <use href="/icons/_sprite.svg#menuIcon"></use>
-                            </svg>
-                            <span>여행 · 티켓</span>
-                        </a>
-                    </li>
-                </ul>
+          </button>
+          <button type="button">
+            <svg role="img" width="36" height="36" viewBox="56 0 36 36">
+              <use href="/icons/_sprite.svg#icons"></use>
+            </svg>
+          </button>
+          <a href="#" class="header__a-cart-origin relative">
+            <svg role="img" width="36" height="36" viewBox="112 0 36 36">
+              <use href="/icons/_sprite.svg#icons"></use>
+            </svg>
+
+            <div
+              class="header__cart-badge absolute -right-1 top-0.5 rounded-full bg-primary px-[5px] text-center text-[9px] text-white"
+            >
+              13
             </div>
+          </a>
+          <div
+            class="header__bubble absolute right-0 top-12 z-10 hidden h-[100px] w-[254px] animate-bubble-fadeIn border border-gray-200 bg-white p-5"
+          >
+            <figure class="flex gap-5">
+              <img src="" alt="" class="header__bubble-img h-[60px] w-[46px]" />
+              <div>
+                <figcaption class="header__bubble-figcaption mb-2 text-l-sm text-gray-300"></figcaption>
+                <p class="header__bubble-p text-p-sm text-content">장바구니에 상품을 담았습니다.</p>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
+      <nav class="flex h-18 items-center justify-between">
+        <div class="group relative flex h-18 items-center gap-3">
+          <svg role="img" width="16" height="14" viewBox="0 0 16 14">
+            <use href="/icons/_sprite.svg#hamburger-black"></use>
+          </svg>
+          <span>카테고리</span>
+          <div
+            class="invisible absolute left-0 top-18 z-20 w-61.75 border-b border-l border-r border-gray-divider bg-white px-3 py-2 group-hover:visible"
+          >
+            <ul class="flex flex-col gap-2">
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="21 18 59 61">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>선물하기</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="21 744 59.8 65.5">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>채소</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="10 1317 80 54">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>과일 · 견과 · 쌀</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="22 1716 58 67">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>수산 · 해산 · 건어물</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="17 265 68 55">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>정육 · 계란</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="17 586 67 61">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>국 · 반찬 · 메인요리</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="17 1155 70 58">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>샐러드 · 간편식</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="20 828 63 63">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>면 · 양념 · 오일</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="24 429 66 37">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>생수 · 음료 · 우유 · 커피</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="18 989 64 62">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>간식 · 과자 · 떡</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="18 186 68 49">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>베이커리 · 치즈 · 델리</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="13 1630 75 70">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>건강식품</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="22 1472 57 70">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>와인</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="21 95 58 69">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>전통주</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="21 336 50 75">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>생활용품 · 리빙 · 캠핑</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="17 503 67 62">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>스킨케어 · 메이크업</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="19 1391 63 68">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>헤어 · 바디 · 구강</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="19 664 62 64">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>주방용품</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="23 904 54 69">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>가전제품</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="21 1070 57 64">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>반려동물</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="22 1228 57 70">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>베이비 · 키즈 · 완구</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex gap-2">
+                  <svg role="img" width="24" height="24" viewBox="17 1556 67 59">
+                    <use href="/icons/_sprite.svg#menuIcon"></use>
+                  </svg>
+                  <span>여행 · 티켓</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
         <ul class="flex">
-            <li class="px-13.5 py-2">
-                <a href="#">신상품</a>
-            </li>
-            <li class="px-13.5 py-2">
-                <a href="#">베스트</a>
-            </li>
-            <li class="px-13.5 py-2">
-                <a href="#">알뜰쇼핑</a>
-            </li>
-            <li class="px-13.5 py-2">
-                <a href="#">특가/혜택</a>
-            </li>
+          <li class="px-13.5 py-2">
+            <a href="#">신상품</a>
+          </li>
+          <li class="px-13.5 py-2">
+            <a href="#">베스트</a>
+          </li>
+          <li class="px-13.5 py-2">
+            <a href="#">알뜰쇼핑</a>
+          </li>
+          <li class="px-13.5 py-2">
+            <a href="#">특가/혜택</a>
+          </li>
         </ul>
-        <a class="rounded-3xl border border-gray-300 px-2 py-1" href="#"><span
-                class="text-p-sm text-primary">샛별·낮</span><span class="text-p-sm text-gray-500"> 배송안내</span></a>
-    </nav>
-    <div class="header__div-simple fixed left-0 right-0 top-0 z-20 hidden bg-white shadow-Below/Low"
-         style="display: none;">
+        <a class="rounded-3xl border border-gray-300 px-2 py-1" href="#">
+          <span class="text-p-sm text-primary">샛별·낮</span>
+          <span class="text-p-sm text-gray-500">배송안내</span>
+        </a>
+      </nav>
+      <div
+        class="header__div-simple fixed left-0 right-0 top-0 z-20 hidden bg-white shadow-Below/Low"
+        style="display: none"
+      >
         <nav class="mx-auto my-0 flex h-18 w-innerWrapper items-center justify-between gap-2">
-            <div class="group relative flex h-18 items-center gap-3">
-                <svg role="img" width="16" height="14" viewBox="0 0 16 14">
-                    <use href="/icons/_sprite.svg#hamburger-black"></use>
-                </svg>
-                <span>카테고리</span>
-                <div class="invisible absolute left-0 top-18 z-10 w-61.75 border-b border-l border-r border-gray-divider bg-white px-3 py-2 group-hover:visible">
-                    <ul class="flex flex-col gap-2">
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="21 18 59 61">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>선물하기</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="21 744 59.8 65.5">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>채소</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="10 1317 80 54">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>과일 · 견과 · 쌀</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="22 1716 58 67">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>수산 · 해산 · 건어물</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="17 265 68 55">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>정육 · 계란</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="17 586 67 61">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>국 · 반찬 · 메인요리</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="17 1155 70 58">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>샐러드 · 간편식</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="20 828 63 63">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>면 · 양념 · 오일</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="24 429 66 37">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>생수 · 음료 · 우유 · 커피</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="18 989 64 62">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>간식 · 과자 · 떡</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="18 186 68 49">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>베이커리 · 치즈 · 델리</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="13 1630 75 70">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>건강식품</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="22 1472 57 70">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>와인</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="21 95 58 69">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>전통주</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="21 336 50 75">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>생활용품 · 리빙 · 캠핑</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="17 503 67 62">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>스킨케어 · 메이크업</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="19 1391 63 68">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>헤어 · 바디 · 구강</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="19 664 62 64">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>주방용품</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="23 904 54 69">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>가전제품</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="21 1070 57 64">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>반려동물</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="22 1228 57 70">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>베이비 · 키즈 · 완구</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex gap-2">
-                                <svg role="img" width="24" height="24" viewBox="17 1556 67 59">
-                                    <use href="/icons/_sprite.svg#menuIcon"></use>
-                                </svg>
-                                <span>여행 · 티켓</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+          <div class="group relative flex h-18 items-center gap-3">
+            <svg role="img" width="16" height="14" viewBox="0 0 16 14">
+              <use href="/icons/_sprite.svg#hamburger-black"></use>
+            </svg>
+            <span>카테고리</span>
+            <div
+              class="invisible absolute left-0 top-18 z-10 w-61.75 border-b border-l border-r border-gray-divider bg-white px-3 py-2 group-hover:visible"
+            >
+              <ul class="flex flex-col gap-2">
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="21 18 59 61">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>선물하기</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="21 744 59.8 65.5">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>채소</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="10 1317 80 54">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>과일 · 견과 · 쌀</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="22 1716 58 67">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>수산 · 해산 · 건어물</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="17 265 68 55">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>정육 · 계란</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="17 586 67 61">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>국 · 반찬 · 메인요리</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="17 1155 70 58">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>샐러드 · 간편식</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="20 828 63 63">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>면 · 양념 · 오일</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="24 429 66 37">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>생수 · 음료 · 우유 · 커피</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="18 989 64 62">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>간식 · 과자 · 떡</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="18 186 68 49">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>베이커리 · 치즈 · 델리</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="13 1630 75 70">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>건강식품</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="22 1472 57 70">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>와인</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="21 95 58 69">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>전통주</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="21 336 50 75">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>생활용품 · 리빙 · 캠핑</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="17 503 67 62">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>스킨케어 · 메이크업</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="19 1391 63 68">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>헤어 · 바디 · 구강</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="19 664 62 64">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>주방용품</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="23 904 54 69">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>가전제품</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="21 1070 57 64">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>반려동물</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="22 1228 57 70">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>베이비 · 키즈 · 완구</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex gap-2">
+                    <svg role="img" width="24" height="24" viewBox="17 1556 67 59">
+                      <use href="/icons/_sprite.svg#menuIcon"></use>
+                    </svg>
+                    <span>여행 · 티켓</span>
+                  </a>
+                </li>
+              </ul>
             </div>
-            <ul class="flex">
-                <li class="px-12 py-2">
-                    <a href="#">신상품</a>
-                </li>
-                <li class="px-12 py-2">
-                    <a href="#">베스트</a>
-                </li>
-                <li class="px-12 py-2">
-                    <a href="#">알뜰쇼핑</a>
-                </li>
-                <li class="px-12 py-2">
-                    <a href="#">특가/혜택</a>
-                </li>
-            </ul>
-            <div class="relative">
-                <input type="text"
-                       class="w-48.5 rounded border border-primary px-5 py-2 text-p-sm text-gray-400 focus:outline-primary"
-                       placeholder="검색어를 입력해주세요">
-                <button type="button">
-                    <svg class="absolute right-5 top-0" role="img" width="36" height="36" viewBox="0 0 36 36">
-                        <use href="/icons/_sprite.svg#search"></use>
-                    </svg>
-                </button>
-            </div>
-            <div class="relative flex gap-5">
-                <button type="button">
-                    <svg role="img" width="36" height="36" viewBox="0 0 36 36">
-                        <use href="/icons/_sprite.svg#icons"></use>
-                    </svg>
-                </button>
-                <button type="button">
-                    <svg role="img" width="36" height="36" viewBox="56 0 36 36">
-                        <use href="/icons/_sprite.svg#icons"></use>
-                    </svg>
-                </button>
-                <a href="#" class="header__a-cart-simple relative">
-                    <svg role="img" width="36" height="36" viewBox="112 0 36 36">
-                        <use href="/icons/_sprite.svg#icons"></use>
-                    </svg>
+          </div>
+          <ul class="flex">
+            <li class="px-12 py-2">
+              <a href="#">신상품</a>
+            </li>
+            <li class="px-12 py-2">
+              <a href="#">베스트</a>
+            </li>
+            <li class="px-12 py-2">
+              <a href="#">알뜰쇼핑</a>
+            </li>
+            <li class="px-12 py-2">
+              <a href="#">특가/혜택</a>
+            </li>
+          </ul>
+          <div class="relative">
+            <input
+              type="text"
+              class="w-48.5 rounded border border-primary px-5 py-2 text-p-sm text-gray-400 focus:outline-primary"
+              placeholder="검색어를 입력해주세요"
+            />
+            <button type="button">
+              <svg class="absolute right-5 top-0" role="img" width="36" height="36" viewBox="0 0 36 36">
+                <use href="/icons/_sprite.svg#search"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="relative flex gap-5">
+            <button type="button">
+              <svg role="img" width="36" height="36" viewBox="0 0 36 36">
+                <use href="/icons/_sprite.svg#icons"></use>
+              </svg>
+            </button>
+            <button type="button">
+              <svg role="img" width="36" height="36" viewBox="56 0 36 36">
+                <use href="/icons/_sprite.svg#icons"></use>
+              </svg>
+            </button>
+            <a href="#" class="header__a-cart-simple relative">
+              <svg role="img" width="36" height="36" viewBox="112 0 36 36">
+                <use href="/icons/_sprite.svg#icons"></use>
+              </svg>
 
-                    <div class="header__cart-badge absolute -right-1 top-0.5 rounded-full bg-primary px-[5px] text-center text-[9px] text-white">
-                        13
-                    </div>
-                </a>
-                <div class="header__bubble absolute right-0 top-12 z-10 hidden h-[100px] w-[254px] animate-bubble-fadeIn border border-gray-200 bg-white p-5">
-                    <figure class="flex gap-5">
-                        <img src="" alt="" class="header__bubble-img h-[60px] w-[46px]">
-                        <div>
-                            <figcaption class="header__bubble-figcaption mb-2 text-l-sm text-gray-300"></figcaption>
-                            <p class="header__bubble-p text-p-sm text-content">
-                                장바구니에 상품을 담았습니다.
-                            </p>
-                        </div>
-                    </figure>
+              <div
+                class="header__cart-badge absolute -right-1 top-0.5 rounded-full bg-primary px-[5px] text-center text-[9px] text-white"
+              >
+                13
+              </div>
+            </a>
+            <div
+              class="header__bubble absolute right-0 top-12 z-10 hidden h-[100px] w-[254px] animate-bubble-fadeIn border border-gray-200 bg-white p-5"
+            >
+              <figure class="flex gap-5">
+                <img src="" alt="" class="header__bubble-img h-[60px] w-[46px]" />
+                <div>
+                  <figcaption class="header__bubble-figcaption mb-2 text-l-sm text-gray-300"></figcaption>
+                  <p class="header__bubble-p text-p-sm text-content">장바구니에 상품을 담았습니다.</p>
                 </div>
+              </figure>
             </div>
+          </div>
         </nav>
-    </div>
-</header>
+      </div>
+    </header>
 
-<div class="fixed right-[39px] top-[440px] z-20 flex h-[223px] w-[76px] flex-col items-center gap-2 border border-gray-200 bg-white p-2">
-    <svg role="button" width="18" height="18" viewBox="8 8 18 18" class="button__prev swiper-button-disabled"
-         tabIndex="-1" aria-label="Previous slide" aria-controls="swiper-wrapper-7b6c91721078a9f52"
-         aria-disabled="true">
+    <div
+      class="fixed right-[39px] top-[440px] z-20 flex h-[223px] w-[76px] flex-col items-center gap-2 border border-gray-200 bg-white p-2"
+    >
+      <svg
+        role="button"
+        width="18"
+        height="18"
+        viewBox="8 8 18 18"
+        class="button__prev swiper-button-disabled"
+        tabIndex="-1"
+        aria-label="Previous slide"
+        aria-controls="swiper-wrapper-7b6c91721078a9f52"
+        aria-disabled="true"
+      >
         <use href="/icons/_sprite.svg#arrows"></use>
-    </svg>
-    <p class="text-l-sm text-black">최근 본 상품</p>
-    <div class="swiper swiper__sidebar h-[129px] w-10 swiper-initialized swiper-vertical swiper-backface-hidden">
-        <div class="swiper-wrapper" id="swiper-wrapper-7b6c91721078a9f52" aria-live="polite"
-             style="transform: translate3d(0px, 0px, 0px);">
-            <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 2"
-                 style="height: 34.4444px; margin-bottom: 20px;">
-                <a href="#"><img
-                        src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/js0aa9ql3nzgbep/thumb1_TxZAyGeLuA.jpeg"
-                        alt="항정살 구이용"></a>
-            </div>
-            <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 2"
-                 style="height: 34.4444px; margin-bottom: 20px;">
-                <a href="#"><img
-                        src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/1r8hagdshf2m48s/product_thumb7_kavgysC08B.jpg"
-                        alt="블렌드 원두 4종"></a>
-            </div>
+      </svg>
+      <p class="text-l-sm text-black">최근 본 상품</p>
+      <div class="swiper swiper__sidebar h-[129px] w-10 swiper-initialized swiper-vertical swiper-backface-hidden">
+        <div
+          class="swiper-wrapper"
+          id="swiper-wrapper-7b6c91721078a9f52"
+          aria-live="polite"
+          style="transform: translate3d(0px, 0px, 0px)"
+        >
+          <div
+            class="swiper-slide swiper-slide-active"
+            role="group"
+            aria-label="1 / 2"
+            style="height: 34.4444px; margin-bottom: 20px"
+          >
+            <a href="#">
+              <img
+                src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/js0aa9ql3nzgbep/thumb1_TxZAyGeLuA.jpeg"
+                alt="항정살 구이용"
+              />
+            </a>
+          </div>
+          <div
+            class="swiper-slide swiper-slide-next"
+            role="group"
+            aria-label="2 / 2"
+            style="height: 34.4444px; margin-bottom: 20px"
+          >
+            <a href="#">
+              <img
+                src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/1r8hagdshf2m48s/product_thumb7_kavgysC08B.jpg"
+                alt="블렌드 원두 4종"
+              />
+            </a>
+          </div>
         </div>
-        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-    <svg role="button" width="18" height="18" viewBox="8 34 18 18" class="button__next" tabIndex="0"
-         aria-label="Next slide" aria-controls="swiper-wrapper-7b6c91721078a9f52" aria-disabled="false">
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+      </div>
+      <svg
+        role="button"
+        width="18"
+        height="18"
+        viewBox="8 34 18 18"
+        class="button__next"
+        tabIndex="0"
+        aria-label="Next slide"
+        aria-controls="swiper-wrapper-7b6c91721078a9f52"
+        aria-disabled="false"
+      >
         <use href="/icons/_sprite.svg#arrows"></use>
-    </svg>
-</div>
+      </svg>
+    </div>
 
-<div class="pb-20">
-    <h2 class="py-12 text-center text-l-lg text-black">베스트</h2>
-    <div class="mx-auto my-0 flex w-innerWrapper justify-between">
+    <div class="pb-20">
+      <h2 class="py-12 text-center text-l-lg text-black">베스트</h2>
+      <div class="mx-auto my-0 flex w-innerWrapper justify-between">
         <form>
-            <div class="list__div-filter no-scrollbar w-[220px] overflow-y-scroll py-3.5">
-                <details class="group border-b border-gray-100">
-                    <summary class="flex list-none items-center justify-between py-3.5 text-l-base text-content">
-                        <span>필터</span>
-                        <button class="list__button-reset text-[10px] font-light text-gray-300" type="reset">
-                            초기화
-                        </button>
-                    </summary>
-                </details>
-                <details class="group border-b border-gray-100" open>
-                    <summary
-                            class="flex cursor-pointer list-none items-center justify-between py-3.5 text-l-base text-content">
-                        <span>카테고리</span>
-                        <span class="transition group-open:rotate-180">
-                <svg role="img" width="18" height="18" viewBox="8 34 18 18 ">
-                  <use href="/icons/_sprite.svg#arrows"></use>
-                </svg>
-              </span>
-                    </summary>
-                    <ul class="list__ul-filter-category pl-1 text-[14px]">
-                        <li class="flex items-center pb-4 pt-2">
-                            <input type="checkbox" id="면" name="면" value="면" class="peer appearance-none">
-                            <label for="면"
-                                   class="h-6 w-6 bg-input__button bg-check--no peer-checked:bg-check--yes mr-2"></label>
-                            <label for="면">면</label>
-                            <span class="pl-2 text-p-sm text-gray-300 align-middle">4</span>
-                        </li>
-                        <li class="flex items-center pb-4 pt-2">
-                            <input type="checkbox" id="채소" name="채소" value="채소" class="peer appearance-none">
-                            <label for="채소"
-                                   class="h-6 w-6 bg-input__button bg-check--no peer-checked:bg-check--yes mr-2"></label>
-                            <label for="채소">채소</label>
-                            <span class="pl-2 text-p-sm text-gray-300 align-middle">4</span>
-                        </li>
-                    </ul>
-                </details>
-                <details class="group border-b border-gray-100" open>
-                    <summary
-                            class="flex cursor-pointer list-none items-center justify-between py-3.5 text-l-base text-content">
-                        <span>브랜드</span>
-                        <span class="transition group-open:rotate-180">
-                <svg role="img" width="18" height="18" viewBox="8 34 18 18 ">
-                  <use href="/icons/_sprite.svg#arrows"></use>
-                </svg>
-              </span>
-                    </summary>
-                    <ul class="list__ul-filter-brand pl-1 text-[14px]">
-                        <li class="flex items-center pb-4 pt-2">
-                            <input type="checkbox" id="풀무원" name="풀무원" value="풀무원" class="peer appearance-none">
-                            <label for="풀무원"
-                                   class="h-6 w-6 bg-input__button bg-check--no peer-checked:bg-check--yes mr-2"></label>
-                            <label for="풀무원">풀무원</label>
-                            <span class="pl-2 text-p-sm text-gray-300 align-middle">3</span>
-                        </li>
+          <div class="list__div-filter no-scrollbar w-[220px] overflow-y-scroll py-3.5">
+            <details class="group border-b border-gray-100">
+              <summary class="flex list-none items-center justify-between py-3.5 text-l-base text-content">
+                <span>필터</span>
+                <button class="list__button-reset text-[10px] font-light text-gray-300" type="reset">초기화</button>
+              </summary>
+            </details>
+            <details class="group border-b border-gray-100" open>
+              <summary
+                class="flex cursor-pointer list-none items-center justify-between py-3.5 text-l-base text-content"
+              >
+                <span>카테고리</span>
+                <span class="transition group-open:rotate-180">
+                  <svg role="img" width="18" height="18" viewBox="8 34 18 18 ">
+                    <use href="/icons/_sprite.svg#arrows"></use>
+                  </svg>
+                </span>
+              </summary>
+              <ul class="list__ul-filter-category pl-1 text-[14px]">
+                <li class="flex items-center pb-4 pt-2">
+                  <input type="checkbox" id="면" name="면" value="면" class="peer appearance-none" />
+                  <label for="면" class="h-6 w-6 bg-input__button bg-check--no peer-checked:bg-check--yes mr-2"></label>
+                  <label for="면">면</label>
+                  <span class="pl-2 text-p-sm text-gray-300 align-middle">4</span>
+                </li>
+                <li class="flex items-center pb-4 pt-2">
+                  <input type="checkbox" id="채소" name="채소" value="채소" class="peer appearance-none" />
+                  <label
+                    for="채소"
+                    class="h-6 w-6 bg-input__button bg-check--no peer-checked:bg-check--yes mr-2"
+                  ></label>
+                  <label for="채소">채소</label>
+                  <span class="pl-2 text-p-sm text-gray-300 align-middle">4</span>
+                </li>
+              </ul>
+            </details>
+            <details class="group border-b border-gray-100" open>
+              <summary
+                class="flex cursor-pointer list-none items-center justify-between py-3.5 text-l-base text-content"
+              >
+                <span>브랜드</span>
+                <span class="transition group-open:rotate-180">
+                  <svg role="img" width="18" height="18" viewBox="8 34 18 18 ">
+                    <use href="/icons/_sprite.svg#arrows"></use>
+                  </svg>
+                </span>
+              </summary>
+              <ul class="list__ul-filter-brand pl-1 text-[14px]">
+                <li class="flex items-center pb-4 pt-2">
+                  <input type="checkbox" id="풀무원" name="풀무원" value="풀무원" class="peer appearance-none" />
+                  <label
+                    for="풀무원"
+                    class="h-6 w-6 bg-input__button bg-check--no peer-checked:bg-check--yes mr-2"
+                  ></label>
+                  <label for="풀무원">풀무원</label>
+                  <span class="pl-2 text-p-sm text-gray-300 align-middle">3</span>
+                </li>
 
-                        <li class="flex items-center pb-4 pt-2">
-                            <input type="checkbox" id="투다리" name="투다리" value="투다리" class="peer appearance-none">
-                            <label for="투다리"
-                                   class="h-6 w-6 bg-input__button bg-check--no peer-checked:bg-check--yes mr-2"></label>
-                            <label for="투다리">투다리</label>
-                            <span class="pl-2 text-p-sm text-gray-300 align-middle">1</span>
-                        </li>
-                    </ul>
-                </details>
-                <details class="group border-b border-gray-100" open>
-                    <summary
-                            class="flex cursor-pointer list-none items-center justify-between py-3.5 text-l-base text-content">
-                        <span>가격</span>
-                        <span class="transition group-open:rotate-180">
-                    <svg role="img" width="18" height="18" viewBox="8 34 18 18 ">
-                      <use href="/icons/_sprite.svg#arrows"></use>
-                    </svg>
-              </span>
-                    </summary>
-                    <ul class="pl-1 text-[14px]">
-                        <li class="flex items-center pb-4 pt-2">
-                            <input type="radio" id="price1" name="price" class="peer appearance-none">
-                            <label for="price1"
-                                   class="h-6 w-6 bg-input__button bg-radio--no peer-checked:bg-radio--yes mr-2"></label>
-                            <label for="price1">5,000원 미만</label>
-                        </li>
-                        <li class="flex items-center pb-4 pt-2">
-                            <input type="radio" id="price2" name="price" class="peer appearance-none">
-                            <label for="price2"
-                                   class="h-6 w-6 bg-input__button bg-radio--no peer-checked:bg-radio--yes mr-2"></label>
-                            <label for="price2">5,000원 ~ 10,000원</label>
-                        </li>
-                        <li class="flex items-center pb-4 pt-2">
-                            <input type="radio" id="price3" name="price" class="peer appearance-none">
-                            <label for="price3"
-                                   class="h-6 w-6 bg-input__button bg-radio--no peer-checked:bg-radio--yes mr-2"></label>
-                            <label for="price3">10,001원 ~ 15,000원</label>
-                        </li>
-                        <li class="flex items-center pb-4 pt-2">
-                            <input type="radio" id="price4" name="price" class="peer appearance-none">
-                            <label for="price4"
-                                   class="h-6 w-6 bg-input__button bg-radio--no peer-checked:bg-radio--yes mr-2"></label>
-                            <label for="price4">15,000원 이상</label>
-                        </li>
-                    </ul>
-                </details>
-                <details class="group border-b border-gray-100" open>
-                    <summary
-                            class="flex cursor-pointer list-none items-center justify-between py-3.5 text-l-base text-content">
-                        <span>혜택</span>
-                        <span class="transition group-open:rotate-180">
-                <svg role="img" width="18" height="18" viewBox="8 34 18 18 ">
-                  <use href="/icons/_sprite.svg#arrows"></use>
-                </svg>
-              </span>
-                    </summary>
-                    <ul class="pl-1 text-[14px]">
-                        <li class="flex items-center pb-4 pt-2">
-                            <input type="checkbox" id="discount" name="discount" class="peer appearance-none">
-                            <label for="discount"
-                                   class="h-6 w-6 bg-input__button bg-check--no peer-checked:bg-check--yes mr-2"></label>
-                            <label for="discount">할인 상품</label>
-                        </li>
-                    </ul>
-                </details>
-                <details class="group border-b border-gray-100" open>
-                    <summary
-                            class="flex cursor-pointer list-none items-center justify-between py-3.5 text-l-base text-content">
-                        <span>유형</span>
-                        <span class="transition group-open:rotate-180">
-                <svg role="img" width="18" height="18" viewBox="8 34 18 18 ">
-                  <use href="/icons/_sprite.svg#arrows"></use>
-                </svg>
-              </span>
-                    </summary>
-                    <ul class="pl-1 text-[14px]">
-                        <li class="flex items-center pb-4 pt-2">
-                            <input type="checkbox" id="karlyOnly" name="karlyOnly" class="peer appearance-none">
-                            <label for="karlyOnly"
-                                   class="h-6 w-6 bg-input__button bg-check--no peer-checked:bg-check--yes mr-2"></label>
-                            <label for="karlyOnly">Karly Only</label>
-                        </li>
-                        <li class="flex items-center pb-4 pt-2">
-                            <input type="checkbox" id="limited" name="limited" class="peer appearance-none">
-                            <label for="limited"
-                                   class="h-6 w-6 bg-input__button bg-check--no peer-checked:bg-check--yes mr-2"></label>
-                            <label for="limited">한정수량</label>
-                        </li>
-                    </ul>
-                </details>
-                <details class="group border-b border-gray-100" open>
-                    <summary
-                            class="flex cursor-pointer list-none items-center justify-between py-3.5 text-l-base text-content">
-                        <span>특정상품 제외</span>
-                        <span class="transition group-open:rotate-180">
-                <svg role="img" width="18" height="18" viewBox="8 34 18 18 ">
-                  <use href="/icons/_sprite.svg#arrows"></use>
-                </svg>
-              </span>
-                    </summary>
-                    <ul class="pl-1 text-[14px]">
-                        <li class="flex items-center pb-4 pt-2">
-                            <input type="checkbox" id="pet" name="pet" class="peer appearance-none" value="반려동물">
-                            <label for="pet"
-                                   class="h-6 w-6 bg-input__button bg-check--no peer-checked:bg-check--yes mr-2"></label>
-                            <label for="pet">반려동물 상품</label>
-                        </li>
-                    </ul>
-                </details>
-            </div>
+                <li class="flex items-center pb-4 pt-2">
+                  <input type="checkbox" id="투다리" name="투다리" value="투다리" class="peer appearance-none" />
+                  <label
+                    for="투다리"
+                    class="h-6 w-6 bg-input__button bg-check--no peer-checked:bg-check--yes mr-2"
+                  ></label>
+                  <label for="투다리">투다리</label>
+                  <span class="pl-2 text-p-sm text-gray-300 align-middle">1</span>
+                </li>
+              </ul>
+            </details>
+            <details class="group border-b border-gray-100" open>
+              <summary
+                class="flex cursor-pointer list-none items-center justify-between py-3.5 text-l-base text-content"
+              >
+                <span>가격</span>
+                <span class="transition group-open:rotate-180">
+                  <svg role="img" width="18" height="18" viewBox="8 34 18 18 ">
+                    <use href="/icons/_sprite.svg#arrows"></use>
+                  </svg>
+                </span>
+              </summary>
+              <ul class="pl-1 text-[14px]">
+                <li class="flex items-center pb-4 pt-2">
+                  <input type="radio" id="price1" name="price" class="peer appearance-none" />
+                  <label
+                    for="price1"
+                    class="h-6 w-6 bg-input__button bg-radio--no peer-checked:bg-radio--yes mr-2"
+                  ></label>
+                  <label for="price1">5,000원 미만</label>
+                </li>
+                <li class="flex items-center pb-4 pt-2">
+                  <input type="radio" id="price2" name="price" class="peer appearance-none" />
+                  <label
+                    for="price2"
+                    class="h-6 w-6 bg-input__button bg-radio--no peer-checked:bg-radio--yes mr-2"
+                  ></label>
+                  <label for="price2">5,000원 ~ 10,000원</label>
+                </li>
+                <li class="flex items-center pb-4 pt-2">
+                  <input type="radio" id="price3" name="price" class="peer appearance-none" />
+                  <label
+                    for="price3"
+                    class="h-6 w-6 bg-input__button bg-radio--no peer-checked:bg-radio--yes mr-2"
+                  ></label>
+                  <label for="price3">10,001원 ~ 15,000원</label>
+                </li>
+                <li class="flex items-center pb-4 pt-2">
+                  <input type="radio" id="price4" name="price" class="peer appearance-none" />
+                  <label
+                    for="price4"
+                    class="h-6 w-6 bg-input__button bg-radio--no peer-checked:bg-radio--yes mr-2"
+                  ></label>
+                  <label for="price4">15,000원 이상</label>
+                </li>
+              </ul>
+            </details>
+            <details class="group border-b border-gray-100" open>
+              <summary
+                class="flex cursor-pointer list-none items-center justify-between py-3.5 text-l-base text-content"
+              >
+                <span>혜택</span>
+                <span class="transition group-open:rotate-180">
+                  <svg role="img" width="18" height="18" viewBox="8 34 18 18 ">
+                    <use href="/icons/_sprite.svg#arrows"></use>
+                  </svg>
+                </span>
+              </summary>
+              <ul class="pl-1 text-[14px]">
+                <li class="flex items-center pb-4 pt-2">
+                  <input type="checkbox" id="discount" name="discount" class="peer appearance-none" />
+                  <label
+                    for="discount"
+                    class="h-6 w-6 bg-input__button bg-check--no peer-checked:bg-check--yes mr-2"
+                  ></label>
+                  <label for="discount">할인 상품</label>
+                </li>
+              </ul>
+            </details>
+            <details class="group border-b border-gray-100" open>
+              <summary
+                class="flex cursor-pointer list-none items-center justify-between py-3.5 text-l-base text-content"
+              >
+                <span>유형</span>
+                <span class="transition group-open:rotate-180">
+                  <svg role="img" width="18" height="18" viewBox="8 34 18 18 ">
+                    <use href="/icons/_sprite.svg#arrows"></use>
+                  </svg>
+                </span>
+              </summary>
+              <ul class="pl-1 text-[14px]">
+                <li class="flex items-center pb-4 pt-2">
+                  <input type="checkbox" id="karlyOnly" name="karlyOnly" class="peer appearance-none" />
+                  <label
+                    for="karlyOnly"
+                    class="h-6 w-6 bg-input__button bg-check--no peer-checked:bg-check--yes mr-2"
+                  ></label>
+                  <label for="karlyOnly">Karly Only</label>
+                </li>
+                <li class="flex items-center pb-4 pt-2">
+                  <input type="checkbox" id="limited" name="limited" class="peer appearance-none" />
+                  <label
+                    for="limited"
+                    class="h-6 w-6 bg-input__button bg-check--no peer-checked:bg-check--yes mr-2"
+                  ></label>
+                  <label for="limited">한정수량</label>
+                </li>
+              </ul>
+            </details>
+            <details class="group border-b border-gray-100" open>
+              <summary
+                class="flex cursor-pointer list-none items-center justify-between py-3.5 text-l-base text-content"
+              >
+                <span>특정상품 제외</span>
+                <span class="transition group-open:rotate-180">
+                  <svg role="img" width="18" height="18" viewBox="8 34 18 18 ">
+                    <use href="/icons/_sprite.svg#arrows"></use>
+                  </svg>
+                </span>
+              </summary>
+              <ul class="pl-1 text-[14px]">
+                <li class="flex items-center pb-4 pt-2">
+                  <input type="checkbox" id="pet" name="pet" class="peer appearance-none" value="반려동물" />
+                  <label
+                    for="pet"
+                    class="h-6 w-6 bg-input__button bg-check--no peer-checked:bg-check--yes mr-2"
+                  ></label>
+                  <label for="pet">반려동물 상품</label>
+                </li>
+              </ul>
+            </details>
+          </div>
         </form>
         <div class="flex flex-col">
-            <div class="list__grid mb-6 grid grid-cols-3 gap-x-[18px] gap-y-6">
-                <div class="text-l-base text-content">
-                    총 <span class="list__span-total">18</span>건
-                </div>
-                <div class="list__div-sort col-span-2 text-l-base">
-                    <form>
-                        <section class="flex items-center justify-end text-gray-300">
-                        <span>
-                            <input name="sort" id="type1" type="radio" class="peer appearance-none" checked>
-                            <label for="type1" class="peer-checked:text-content">추천순</label>
-                        </span>
-                            <div class="mx-2 h-2.5 w-0 border border-gray-300"></div>
-                            <span>
-                            <input name="sort" id="type2" type="radio" class="peer appearance-none">
-                            <label for="type2" class="peer-checked:text-content">신상품순</label>
-                        </span>
-                            <div class="mx-2 h-2.5 w-0 border border-gray-300"></div>
-                            <span>
-                            <input name="sort" id="type3" type="radio" class="peer appearance-none">
-                            <label for="type3" class="peer-checked:text-content">판매량순</label>
-                        </span>
-                            <div class="mx-2 h-2.5 w-0 border border-gray-300"></div>
-                            <span>
-                            <input name="sort" id="type4" type="radio" class="peer appearance-none">
-                            <label for="type4" class="peer-checked:text-content">혜택순</label>
-                        </span>
-                            <div class="mx-2 h-2.5 w-0 border border-gray-300"></div>
-                            <span>
-                            <input name="sort" id="type5" type="radio" class="peer appearance-none">
-                            <label for="type5" class="peer-checked:text-content">낮은 가격순</label>
-                        </span>
-                            <div class="mx-2 h-2.5 w-0 border border-gray-300"></div>
-                            <span>
-                            <input name="sort" id="type6" type="radio" class="peer appearance-none">
-                            <label for="type6" class="peer-checked:text-content">높은 가격순</label>
-                        </span>
-
-                        </section>
-                    </form>
-                </div>
-
-
-                <div class="w-productBox-width h-productBox-height list_div-productBox">
-                    <a href="#" class="a__product">
-                        <div class="relative">
-                            <div class="mb-4 h-80">
-                                <img src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/1r8hagdshf2m48s/product_thumb7_kavgysC08B.jpg"
-                                     class="h-full w-full object-cover" alt="블렌드 원두 4종">
-                            </div>
-                            <div class="info flex flex-col gap-2">
-                                <span class="text-l-sm text-gray-400">샛별배송</span>
-                                <p class="text-p-base text-content">[블루보틀] 블렌드 원두 4종</p>
-                                <div class="flex gap-2">
-
-                                    <p class="text-l-lg text-content">25,000 <span>원</span></p>
-                                </div>
-
-                                <p class="text-p-sm text-gray-400">섬세하고 다채롭게 풀어낸 향미</p>
-                                <div class="flex gap-2">
-
-
-                                </div>
-                            </div>
-                            <button type="button" aria-label="장바구니 버튼"
-                                    class="productBox__cart-button left-productBox-cart-left top-productBox-cart-top absolute">
-                                <svg role="img" width="45" height="45" viewBox="0 0 45 45 ">
-                                    <use href="/icons/_sprite.svg#cart"></use>
-                                </svg>
-                            </button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="w-productBox-width h-productBox-height list_div-productBox">
-                    <a href="#" class="a__product">
-                        <div class="relative">
-                            <div class="mb-4 h-80">
-                                <img src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/js0aa9ql3nzgbep/thumb1_TxZAyGeLuA.jpeg"
-                                     class="h-full w-full object-cover" alt="항정살 구이용">
-                            </div>
-                            <div class="info flex flex-col gap-2">
-                                <span class="text-l-sm text-gray-400">샛별배송</span>
-                                <p class="text-p-base text-content">[도드람한돈] 항정살 구이용 500g (냉장)</p>
-                                <div class="flex gap-2">
-                                    <p class="text-l-lg text-accent-yellow">5<span>%</span></p>
-                                    <p class="text-l-lg text-content">27,070 <span>원</span></p>
-                                </div>
-                                <span class="text-p-sm text-gray-400 line-through">28,500 원</span>
-                                <p class="text-p-sm text-gray-400"> 100g당 판매가: 5,700원 </p>
-                                <div class="flex gap-2">
-                                    <span class="rounded bg-gray-100 p-1 text-l-sm text-primary">Karly Only</span>
-
-                                </div>
-                            </div>
-                            <button type="button" aria-label="장바구니 버튼"
-                                    class="productBox__cart-button left-productBox-cart-left top-productBox-cart-top absolute">
-                                <svg role="img" width="45" height="45" viewBox="0 0 45 45 ">
-                                    <use href="/icons/_sprite.svg#cart"></use>
-                                </svg>
-                            </button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="w-productBox-width h-productBox-height list_div-productBox">
-                    <a href="#" class="a__product">
-                        <div class="relative">
-                            <div class="mb-4 h-80">
-                                <img src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/tmpp1i69yyi21zq/thumb1_tyTCvTrIZk.jpg"
-                                     class="h-full w-full object-cover" alt="대패 삼겹살">
-                            </div>
-                            <div class="info flex flex-col gap-2">
-                                <span class="text-l-sm text-gray-400">샛별배송</span>
-                                <p class="text-p-base text-content">[도드람한돈] 대패 삼겹살 300g (냉동)</p>
-                                <div class="flex gap-2">
-                                    <p class="text-l-lg text-accent-yellow">7<span>%</span></p>
-                                    <p class="text-l-lg text-content">8,360 <span>원</span></p>
-                                </div>
-                                <span class="text-p-sm text-gray-400 line-through">8,990 원</span>
-                                <p class="text-p-sm text-gray-400"> 100g당 판매가: 2,997원 </p>
-                                <div class="flex gap-2">
-
-
-                                </div>
-                            </div>
-                            <button type="button" aria-label="장바구니 버튼"
-                                    class="productBox__cart-button left-productBox-cart-left top-productBox-cart-top absolute">
-                                <svg role="img" width="45" height="45" viewBox="0 0 45 45 ">
-                                    <use href="/icons/_sprite.svg#cart"></use>
-                                </svg>
-                            </button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="w-productBox-width h-productBox-height list_div-productBox">
-                    <a href="#" class="a__product">
-                        <div class="relative">
-                            <div class="mb-4 h-80">
-                                <img src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/tpwo5fbl3kse9ss/thumb1_CYmlaTJ49L.jpg"
-                                     class="h-full w-full object-cover" alt="오징어">
-                            </div>
-                            <div class="info flex flex-col gap-2">
-                                <span class="text-l-sm text-gray-400">샛별배송</span>
-                                <p class="text-p-base text-content">[KF365] 간편한 국산 손질 오징어 1kg</p>
-                                <div class="flex gap-2">
-                                    <p class="text-l-lg text-accent-yellow">2<span>%</span></p>
-                                    <p class="text-l-lg text-content">21,070 <span>원</span></p>
-                                </div>
-                                <span class="text-p-sm text-gray-400 line-through">21,500 원</span>
-                                <p class="text-p-sm text-gray-400">바로 요리할 수 있어 간편</p>
-                                <div class="flex gap-2">
-                                    <span class="rounded bg-gray-100 p-1 text-l-sm text-primary">Karly Only</span>
-                                    <span class="rounded bg-gray-100 p-1 text-l-sm text-content">한정수량</span>
-                                </div>
-                            </div>
-                            <button type="button" aria-label="장바구니 버튼"
-                                    class="productBox__cart-button left-productBox-cart-left top-productBox-cart-top absolute">
-                                <svg role="img" width="45" height="45" viewBox="0 0 45 45 ">
-                                    <use href="/icons/_sprite.svg#cart"></use>
-                                </svg>
-                            </button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="w-productBox-width h-productBox-height list_div-productBox">
-                    <a href="#" class="a__product">
-                        <div class="relative">
-                            <div class="mb-4 h-80">
-                                <img src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/g32xoy95y83ty79/thumb1_L5IJ0loSNy.jpg"
-                                     class="h-full w-full object-cover" alt="갈치">
-                            </div>
-                            <div class="info flex flex-col gap-2">
-                                <span class="text-l-sm text-gray-400">샛별배송</span>
-                                <p class="text-p-base text-content">[포트럭] 제주 손질 갈치 반마리 (왕특대) 220g (생물)</p>
-                                <div class="flex gap-2">
-                                    <p class="text-l-lg text-accent-yellow">20<span>%</span></p>
-                                    <p class="text-l-lg text-content">20,720 <span>원</span></p>
-                                </div>
-                                <span class="text-p-sm text-gray-400 line-through">25,900 원</span>
-                                <p class="text-p-sm text-gray-400">두툼한 살결이 오롯이 느껴지는</p>
-                                <div class="flex gap-2">
-                                    <span class="rounded bg-gray-100 p-1 text-l-sm text-primary">Karly Only</span>
-                                    <span class="rounded bg-gray-100 p-1 text-l-sm text-content">한정수량</span>
-                                </div>
-                            </div>
-                            <button type="button" aria-label="장바구니 버튼"
-                                    class="productBox__cart-button left-productBox-cart-left top-productBox-cart-top absolute">
-                                <svg role="img" width="45" height="45" viewBox="0 0 45 45 ">
-                                    <use href="/icons/_sprite.svg#cart"></use>
-                                </svg>
-                            </button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="w-productBox-width h-productBox-height list_div-productBox">
-                    <a href="#" class="a__product">
-                        <div class="relative">
-                            <div class="mb-4 h-80">
-                                <img src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/musnud903ufy07p/thumb1_SN80veqJKT.jpg"
-                                     class="h-full w-full object-cover" alt="홍가리비">
-                            </div>
-                            <div class="info flex flex-col gap-2">
-                                <span class="text-l-sm text-gray-400">샛별배송</span>
-                                <p class="text-p-base text-content">[포트럭] 국산 생물 홍가리비 700g</p>
-                                <div class="flex gap-2">
-
-                                    <p class="text-l-lg text-content">7,200 <span>원</span></p>
-                                </div>
-
-                                <p class="text-p-sm text-gray-400">제철 맞은 화려한 자태</p>
-                                <div class="flex gap-2">
-
-
-                                </div>
-                            </div>
-                            <button type="button" aria-label="장바구니 버튼"
-                                    class="productBox__cart-button left-productBox-cart-left top-productBox-cart-top absolute">
-                                <svg role="img" width="45" height="45" viewBox="0 0 45 45 ">
-                                    <use href="/icons/_sprite.svg#cart"></use>
-                                </svg>
-                            </button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="w-productBox-width h-productBox-height list_div-productBox">
-                    <a href="#" class="a__product">
-                        <div class="relative">
-                            <div class="mb-4 h-80">
-                                <img src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/ele9glei84aiu7c/thumb1_n9RK0Et1DI.jpeg"
-                                     class="h-full w-full object-cover" alt="바나나">
-                            </div>
-                            <div class="info flex flex-col gap-2">
-                                <span class="text-l-sm text-gray-400">샛별배송</span>
-                                <p class="text-p-base text-content">[Dole] 스위티오 바나나 1kg</p>
-                                <div class="flex gap-2">
-                                    <p class="text-l-lg text-accent-yellow">5<span>%</span></p>
-                                    <p class="text-l-lg text-content">4,250 <span>원</span></p>
-                                </div>
-                                <span class="text-p-sm text-gray-400 line-through">4,480 원</span>
-                                <p class="text-p-sm text-gray-400">고랭지 재배로 더 달고 쫀득한 (1수/1kg내외)</p>
-                                <div class="flex gap-2">
-
-
-                                </div>
-                            </div>
-                            <button type="button" aria-label="장바구니 버튼"
-                                    class="productBox__cart-button left-productBox-cart-left top-productBox-cart-top absolute">
-                                <svg role="img" width="45" height="45" viewBox="0 0 45 45 ">
-                                    <use href="/icons/_sprite.svg#cart"></use>
-                                </svg>
-                            </button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="w-productBox-width h-productBox-height list_div-productBox">
-                    <a href="#" class="a__product">
-                        <div class="relative">
-                            <div class="mb-4 h-80">
-                                <img src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/om399jm5ck87r8z/thumb1_jSf7XBKemF.jpg"
-                                     class="h-full w-full object-cover" alt="파인애플">
-                            </div>
-                            <div class="info flex flex-col gap-2">
-                                <span class="text-l-sm text-gray-400">샛별배송</span>
-                                <p class="text-p-base text-content">[Dole] 스위티오 파인애플 청크 400g</p>
-                                <div class="flex gap-2">
-                                    <p class="text-l-lg text-accent-yellow">20<span>%</span></p>
-                                    <p class="text-l-lg text-content">6,000 <span>원</span></p>
-                                </div>
-                                <span class="text-p-sm text-gray-400 line-through">7,500 원</span>
-                                <p class="text-p-sm text-gray-400">손쉽게 즐기는 조각 파인애플</p>
-                                <div class="flex gap-2">
-
-
-                                </div>
-                            </div>
-                            <button type="button" aria-label="장바구니 버튼"
-                                    class="productBox__cart-button left-productBox-cart-left top-productBox-cart-top absolute">
-                                <svg role="img" width="45" height="45" viewBox="0 0 45 45 ">
-                                    <use href="/icons/_sprite.svg#cart"></use>
-                                </svg>
-                            </button>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="w-productBox-width h-productBox-height list_div-productBox">
-                    <a href="#" class="a__product">
-                        <div class="relative">
-                            <div class="mb-4 h-80">
-                                <img src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/ipop83di685lwjb/thumb1_FF16POVoCc.jpg"
-                                     class="h-full w-full object-cover" alt="브로콜리">
-                            </div>
-                            <div class="info flex flex-col gap-2">
-                                <span class="text-l-sm text-gray-400">샛별배송</span>
-                                <p class="text-p-base text-content">[KF365] 브로콜리 1입</p>
-                                <div class="flex gap-2">
-                                    <p class="text-l-lg text-accent-yellow">10<span>%</span></p>
-                                    <p class="text-l-lg text-content">2,330 <span>원</span></p>
-                                </div>
-                                <span class="text-p-sm text-gray-400 line-through">2,590 원</span>
-                                <p class="text-p-sm text-gray-400">믿고 먹을 수 있는 상품을 합리적인 가격에, KF365</p>
-                                <div class="flex gap-2">
-
-
-                                </div>
-                            </div>
-                            <button type="button" aria-label="장바구니 버튼"
-                                    class="productBox__cart-button left-productBox-cart-left top-productBox-cart-top absolute">
-                                <svg role="img" width="45" height="45" viewBox="0 0 45 45 ">
-                                    <use href="/icons/_sprite.svg#cart"></use>
-                                </svg>
-                            </button>
-                        </div>
-                    </a>
-                </div>
+          <div class="list__grid mb-6 grid grid-cols-3 gap-x-[18px] gap-y-6">
+            <div class="text-l-base text-content">
+              총
+              <span class="list__span-total">18</span>
+              건
+            </div>
+            <div class="list__div-sort col-span-2 text-l-base">
+              <form>
+                <section class="flex items-center justify-end text-gray-300">
+                  <span>
+                    <input name="sort" id="type1" type="radio" class="peer appearance-none" checked />
+                    <label for="type1" class="peer-checked:text-content">추천순</label>
+                  </span>
+                  <div class="mx-2 h-2.5 w-0 border border-gray-300"></div>
+                  <span>
+                    <input name="sort" id="type2" type="radio" class="peer appearance-none" />
+                    <label for="type2" class="peer-checked:text-content">신상품순</label>
+                  </span>
+                  <div class="mx-2 h-2.5 w-0 border border-gray-300"></div>
+                  <span>
+                    <input name="sort" id="type3" type="radio" class="peer appearance-none" />
+                    <label for="type3" class="peer-checked:text-content">판매량순</label>
+                  </span>
+                  <div class="mx-2 h-2.5 w-0 border border-gray-300"></div>
+                  <span>
+                    <input name="sort" id="type4" type="radio" class="peer appearance-none" />
+                    <label for="type4" class="peer-checked:text-content">혜택순</label>
+                  </span>
+                  <div class="mx-2 h-2.5 w-0 border border-gray-300"></div>
+                  <span>
+                    <input name="sort" id="type5" type="radio" class="peer appearance-none" />
+                    <label for="type5" class="peer-checked:text-content">낮은 가격순</label>
+                  </span>
+                  <div class="mx-2 h-2.5 w-0 border border-gray-300"></div>
+                  <span>
+                    <input name="sort" id="type6" type="radio" class="peer appearance-none" />
+                    <label for="type6" class="peer-checked:text-content">높은 가격순</label>
+                  </span>
+                </section>
+              </form>
             </div>
 
-            <div class="flex h-[600px] flex-col items-center justify-center" id="no-item" style="display: none;">
-                <svg role="img" width="72" height="72" viewBox="0 0 36 36" aria-label="">
-                    <use href="/icons/_sprite.svg#search-gray"></use>
-                </svg>
-                <p class="text-p-base text-gray-600">해당 상품이 없습니다.</p>
+            <div class="w-productBox-width h-productBox-height list_div-productBox">
+              <a href="#" class="a__product">
+                <div class="relative">
+                  <div class="mb-4 h-80">
+                    <img
+                      src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/1r8hagdshf2m48s/product_thumb7_kavgysC08B.jpg"
+                      class="h-full w-full object-cover"
+                      alt="블렌드 원두 4종"
+                    />
+                  </div>
+                  <div class="info flex flex-col gap-2">
+                    <span class="text-l-sm text-gray-400">샛별배송</span>
+                    <p class="text-p-base text-content">[블루보틀] 블렌드 원두 4종</p>
+                    <div class="flex gap-2">
+                      <p class="text-l-lg text-content">
+                        25,000
+                        <span>원</span>
+                      </p>
+                    </div>
+
+                    <p class="text-p-sm text-gray-400">섬세하고 다채롭게 풀어낸 향미</p>
+                    <div class="flex gap-2"></div>
+                  </div>
+                  <button
+                    type="button"
+                    aria-label="장바구니 버튼"
+                    class="productBox__cart-button left-productBox-cart-left top-productBox-cart-top absolute"
+                  >
+                    <svg role="img" width="45" height="45" viewBox="0 0 45 45 ">
+                      <use href="/icons/_sprite.svg#cart"></use>
+                    </svg>
+                  </button>
+                </div>
+              </a>
             </div>
-            <div class="flex justify-center pt-9 text-center">
-                <div class="list__div-pagination flex border-y border-l border-gray-100" style="display: flex;">
-                    <button class="flex h-[34px] w-[34px] items-center justify-center border-r border-gray-100 hover:bg-gray-200">
-                        <svg role="img" width="10" height="10" viewBox="3 3 10 10" aria-label="">
-                            <use href="/icons/_sprite.svg#arrow-page"></use>
-                        </svg>
-                    </button>
-                    <button class="flex h-[34px] w-[34px] items-center justify-center border-r border-gray-100 hover:bg-gray-200">
-                        <svg role="img" width="10" height="10" viewBox="22 3 10 10" aria-label="">
-                            <use href="/icons/_sprite.svg#arrow-page"></use>
-                        </svg>
-                    </button>
-                    <button class="flex h-[34px] w-[34px] items-center justify-center border-r border-gray-100 list__button-pageNumber text-p-base text-content hover:bg-gray-200 bg-gray-200 text-primary">
-                        1
-                    </button>
-                    <button class="flex h-[34px] w-[34px] items-center justify-center border-r border-gray-100 list__button-pageNumber text-p-base text-content hover:bg-gray-200">
+
+            <div class="w-productBox-width h-productBox-height list_div-productBox">
+              <a href="#" class="a__product">
+                <div class="relative">
+                  <div class="mb-4 h-80">
+                    <img
+                      src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/js0aa9ql3nzgbep/thumb1_TxZAyGeLuA.jpeg"
+                      class="h-full w-full object-cover"
+                      alt="항정살 구이용"
+                    />
+                  </div>
+                  <div class="info flex flex-col gap-2">
+                    <span class="text-l-sm text-gray-400">샛별배송</span>
+                    <p class="text-p-base text-content">[도드람한돈] 항정살 구이용 500g (냉장)</p>
+                    <div class="flex gap-2">
+                      <p class="text-l-lg text-accent-yellow">
+                        5
+                        <span>%</span>
+                      </p>
+                      <p class="text-l-lg text-content">
+                        27,070
+                        <span>원</span>
+                      </p>
+                    </div>
+                    <span class="text-p-sm text-gray-400 line-through">28,500 원</span>
+                    <p class="text-p-sm text-gray-400">100g당 판매가: 5,700원</p>
+                    <div class="flex gap-2">
+                      <span class="rounded bg-gray-100 p-1 text-l-sm text-primary">Karly Only</span>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    aria-label="장바구니 버튼"
+                    class="productBox__cart-button left-productBox-cart-left top-productBox-cart-top absolute"
+                  >
+                    <svg role="img" width="45" height="45" viewBox="0 0 45 45 ">
+                      <use href="/icons/_sprite.svg#cart"></use>
+                    </svg>
+                  </button>
+                </div>
+              </a>
+            </div>
+
+            <div class="w-productBox-width h-productBox-height list_div-productBox">
+              <a href="#" class="a__product">
+                <div class="relative">
+                  <div class="mb-4 h-80">
+                    <img
+                      src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/tmpp1i69yyi21zq/thumb1_tyTCvTrIZk.jpg"
+                      class="h-full w-full object-cover"
+                      alt="대패 삼겹살"
+                    />
+                  </div>
+                  <div class="info flex flex-col gap-2">
+                    <span class="text-l-sm text-gray-400">샛별배송</span>
+                    <p class="text-p-base text-content">[도드람한돈] 대패 삼겹살 300g (냉동)</p>
+                    <div class="flex gap-2">
+                      <p class="text-l-lg text-accent-yellow">
+                        7
+                        <span>%</span>
+                      </p>
+                      <p class="text-l-lg text-content">
+                        8,360
+                        <span>원</span>
+                      </p>
+                    </div>
+                    <span class="text-p-sm text-gray-400 line-through">8,990 원</span>
+                    <p class="text-p-sm text-gray-400">100g당 판매가: 2,997원</p>
+                    <div class="flex gap-2"></div>
+                  </div>
+                  <button
+                    type="button"
+                    aria-label="장바구니 버튼"
+                    class="productBox__cart-button left-productBox-cart-left top-productBox-cart-top absolute"
+                  >
+                    <svg role="img" width="45" height="45" viewBox="0 0 45 45 ">
+                      <use href="/icons/_sprite.svg#cart"></use>
+                    </svg>
+                  </button>
+                </div>
+              </a>
+            </div>
+
+            <div class="w-productBox-width h-productBox-height list_div-productBox">
+              <a href="#" class="a__product">
+                <div class="relative">
+                  <div class="mb-4 h-80">
+                    <img
+                      src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/tpwo5fbl3kse9ss/thumb1_CYmlaTJ49L.jpg"
+                      class="h-full w-full object-cover"
+                      alt="오징어"
+                    />
+                  </div>
+                  <div class="info flex flex-col gap-2">
+                    <span class="text-l-sm text-gray-400">샛별배송</span>
+                    <p class="text-p-base text-content">[KF365] 간편한 국산 손질 오징어 1kg</p>
+                    <div class="flex gap-2">
+                      <p class="text-l-lg text-accent-yellow">
                         2
-                    </button>
-                    <button class="flex h-[34px] w-[34px] items-center justify-center border-r border-gray-100 hover:bg-gray-200"
-                            id="next-arrow">
-                        <svg role="img" width="10" height="10" viewBox="35 3 10 10" aria-label="">
-                            <use href="/icons/_sprite.svg#arrow-page"></use>
-                        </svg>
-                    </button>
-                    <button class="flex h-[34px] w-[34px] items-center justify-center border-r border-gray-100 hover:bg-gray-200">
-                        <svg role="img" width="10" height="10" viewBox="55 3 10 10" aria-label="">
-                            <use href="/icons/_sprite.svg#arrow-page"></use>
-                        </svg>
-                    </button>
+                        <span>%</span>
+                      </p>
+                      <p class="text-l-lg text-content">
+                        21,070
+                        <span>원</span>
+                      </p>
+                    </div>
+                    <span class="text-p-sm text-gray-400 line-through">21,500 원</span>
+                    <p class="text-p-sm text-gray-400">바로 요리할 수 있어 간편</p>
+                    <div class="flex gap-2">
+                      <span class="rounded bg-gray-100 p-1 text-l-sm text-primary">Karly Only</span>
+                      <span class="rounded bg-gray-100 p-1 text-l-sm text-content">한정수량</span>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    aria-label="장바구니 버튼"
+                    class="productBox__cart-button left-productBox-cart-left top-productBox-cart-top absolute"
+                  >
+                    <svg role="img" width="45" height="45" viewBox="0 0 45 45 ">
+                      <use href="/icons/_sprite.svg#cart"></use>
+                    </svg>
+                  </button>
                 </div>
+              </a>
             </div>
-        </div>
-    </div>
-</div>
-<dialog class="add-cart__popup w-[396px] rounded-2xl px-5 py-6 backdrop:backdrop-brightness-50">
-    <form action="#" class="grid auto-rows-min grid-cols-2 gap-x-2 gap-y-7">
-        <div class="col-span-2 grid">
-            <div class="product__info--template row-start-1">
-                <p class="mb-3 text-l-base text-content" data-id="1r8hagdshf2m48s">
-                    [블루보틀] 블렌드 원두 4종
-                </p>
-                <span class="mt-4 text-l-base leading-[30px]" data-discountprice="25000" id="discountPrice"
-                      data-img="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/1r8hagdshf2m48s/product_thumb7_kavgysC08B.jpg">25,000원</span>
 
-            </div>
-            <div class="row-start-1 flex h-[30px] w-[90px] self-end justify-self-end border border-gray-200">
-                <button type="button" class="button__minus w-[30px] overflow-hidden">
-                    <svg role="img" width="46" height="84" viewBox="8 46 46 84">
-                        <use href="/icons/_sprite.svg#minus"></use>
+            <div class="w-productBox-width h-productBox-height list_div-productBox">
+              <a href="#" class="a__product">
+                <div class="relative">
+                  <div class="mb-4 h-80">
+                    <img
+                      src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/g32xoy95y83ty79/thumb1_L5IJ0loSNy.jpg"
+                      class="h-full w-full object-cover"
+                      alt="갈치"
+                    />
+                  </div>
+                  <div class="info flex flex-col gap-2">
+                    <span class="text-l-sm text-gray-400">샛별배송</span>
+                    <p class="text-p-base text-content">[포트럭] 제주 손질 갈치 반마리 (왕특대) 220g (생물)</p>
+                    <div class="flex gap-2">
+                      <p class="text-l-lg text-accent-yellow">
+                        20
+                        <span>%</span>
+                      </p>
+                      <p class="text-l-lg text-content">
+                        20,720
+                        <span>원</span>
+                      </p>
+                    </div>
+                    <span class="text-p-sm text-gray-400 line-through">25,900 원</span>
+                    <p class="text-p-sm text-gray-400">두툼한 살결이 오롯이 느껴지는</p>
+                    <div class="flex gap-2">
+                      <span class="rounded bg-gray-100 p-1 text-l-sm text-primary">Karly Only</span>
+                      <span class="rounded bg-gray-100 p-1 text-l-sm text-content">한정수량</span>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    aria-label="장바구니 버튼"
+                    class="productBox__cart-button left-productBox-cart-left top-productBox-cart-top absolute"
+                  >
+                    <svg role="img" width="45" height="45" viewBox="0 0 45 45 ">
+                      <use href="/icons/_sprite.svg#cart"></use>
                     </svg>
-                </button>
-                <span class="product__amount inline-block w-[30px] text-center align-top leading-[30px]">1</span>
-                <button type="button" class="button__plus w-[30px] overflow-hidden">
-                    <svg role="img" width="46" height="84" viewBox="8 8 46 84">
-                        <use href="/icons/_sprite.svg#plus"></use>
-                    </svg>
-                </button>
+                  </button>
+                </div>
+              </a>
             </div>
+
+            <div class="w-productBox-width h-productBox-height list_div-productBox">
+              <a href="#" class="a__product">
+                <div class="relative">
+                  <div class="mb-4 h-80">
+                    <img
+                      src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/musnud903ufy07p/thumb1_SN80veqJKT.jpg"
+                      class="h-full w-full object-cover"
+                      alt="홍가리비"
+                    />
+                  </div>
+                  <div class="info flex flex-col gap-2">
+                    <span class="text-l-sm text-gray-400">샛별배송</span>
+                    <p class="text-p-base text-content">[포트럭] 국산 생물 홍가리비 700g</p>
+                    <div class="flex gap-2">
+                      <p class="text-l-lg text-content">
+                        7,200
+                        <span>원</span>
+                      </p>
+                    </div>
+
+                    <p class="text-p-sm text-gray-400">제철 맞은 화려한 자태</p>
+                    <div class="flex gap-2"></div>
+                  </div>
+                  <button
+                    type="button"
+                    aria-label="장바구니 버튼"
+                    class="productBox__cart-button left-productBox-cart-left top-productBox-cart-top absolute"
+                  >
+                    <svg role="img" width="45" height="45" viewBox="0 0 45 45 ">
+                      <use href="/icons/_sprite.svg#cart"></use>
+                    </svg>
+                  </button>
+                </div>
+              </a>
+            </div>
+
+            <div class="w-productBox-width h-productBox-height list_div-productBox">
+              <a href="#" class="a__product">
+                <div class="relative">
+                  <div class="mb-4 h-80">
+                    <img
+                      src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/ele9glei84aiu7c/thumb1_n9RK0Et1DI.jpeg"
+                      class="h-full w-full object-cover"
+                      alt="바나나"
+                    />
+                  </div>
+                  <div class="info flex flex-col gap-2">
+                    <span class="text-l-sm text-gray-400">샛별배송</span>
+                    <p class="text-p-base text-content">[Dole] 스위티오 바나나 1kg</p>
+                    <div class="flex gap-2">
+                      <p class="text-l-lg text-accent-yellow">
+                        5
+                        <span>%</span>
+                      </p>
+                      <p class="text-l-lg text-content">
+                        4,250
+                        <span>원</span>
+                      </p>
+                    </div>
+                    <span class="text-p-sm text-gray-400 line-through">4,480 원</span>
+                    <p class="text-p-sm text-gray-400">고랭지 재배로 더 달고 쫀득한 (1수/1kg내외)</p>
+                    <div class="flex gap-2"></div>
+                  </div>
+                  <button
+                    type="button"
+                    aria-label="장바구니 버튼"
+                    class="productBox__cart-button left-productBox-cart-left top-productBox-cart-top absolute"
+                  >
+                    <svg role="img" width="45" height="45" viewBox="0 0 45 45 ">
+                      <use href="/icons/_sprite.svg#cart"></use>
+                    </svg>
+                  </button>
+                </div>
+              </a>
+            </div>
+
+            <div class="w-productBox-width h-productBox-height list_div-productBox">
+              <a href="#" class="a__product">
+                <div class="relative">
+                  <div class="mb-4 h-80">
+                    <img
+                      src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/om399jm5ck87r8z/thumb1_jSf7XBKemF.jpg"
+                      class="h-full w-full object-cover"
+                      alt="파인애플"
+                    />
+                  </div>
+                  <div class="info flex flex-col gap-2">
+                    <span class="text-l-sm text-gray-400">샛별배송</span>
+                    <p class="text-p-base text-content">[Dole] 스위티오 파인애플 청크 400g</p>
+                    <div class="flex gap-2">
+                      <p class="text-l-lg text-accent-yellow">
+                        20
+                        <span>%</span>
+                      </p>
+                      <p class="text-l-lg text-content">
+                        6,000
+                        <span>원</span>
+                      </p>
+                    </div>
+                    <span class="text-p-sm text-gray-400 line-through">7,500 원</span>
+                    <p class="text-p-sm text-gray-400">손쉽게 즐기는 조각 파인애플</p>
+                    <div class="flex gap-2"></div>
+                  </div>
+                  <button
+                    type="button"
+                    aria-label="장바구니 버튼"
+                    class="productBox__cart-button left-productBox-cart-left top-productBox-cart-top absolute"
+                  >
+                    <svg role="img" width="45" height="45" viewBox="0 0 45 45 ">
+                      <use href="/icons/_sprite.svg#cart"></use>
+                    </svg>
+                  </button>
+                </div>
+              </a>
+            </div>
+
+            <div class="w-productBox-width h-productBox-height list_div-productBox">
+              <a href="#" class="a__product">
+                <div class="relative">
+                  <div class="mb-4 h-80">
+                    <img
+                      src="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/ipop83di685lwjb/thumb1_FF16POVoCc.jpg"
+                      class="h-full w-full object-cover"
+                      alt="브로콜리"
+                    />
+                  </div>
+                  <div class="info flex flex-col gap-2">
+                    <span class="text-l-sm text-gray-400">샛별배송</span>
+                    <p class="text-p-base text-content">[KF365] 브로콜리 1입</p>
+                    <div class="flex gap-2">
+                      <p class="text-l-lg text-accent-yellow">
+                        10
+                        <span>%</span>
+                      </p>
+                      <p class="text-l-lg text-content">
+                        2,330
+                        <span>원</span>
+                      </p>
+                    </div>
+                    <span class="text-p-sm text-gray-400 line-through">2,590 원</span>
+                    <p class="text-p-sm text-gray-400">믿고 먹을 수 있는 상품을 합리적인 가격에, KF365</p>
+                    <div class="flex gap-2"></div>
+                  </div>
+                  <button
+                    type="button"
+                    aria-label="장바구니 버튼"
+                    class="productBox__cart-button left-productBox-cart-left top-productBox-cart-top absolute"
+                  >
+                    <svg role="img" width="45" height="45" viewBox="0 0 45 45 ">
+                      <use href="/icons/_sprite.svg#cart"></use>
+                    </svg>
+                  </button>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="flex h-[600px] flex-col items-center justify-center" id="no-item" style="display: none">
+            <svg role="img" width="72" height="72" viewBox="0 0 36 36" aria-label="">
+              <use href="/icons/_sprite.svg#search-gray"></use>
+            </svg>
+            <p class="text-p-base text-gray-600">해당 상품이 없습니다.</p>
+          </div>
+          <div class="flex justify-center pt-9 text-center">
+            <div class="list__div-pagination flex border-y border-l border-gray-100" style="display: flex">
+              <button
+                class="flex h-[34px] w-[34px] items-center justify-center border-r border-gray-100 hover:bg-gray-200"
+              >
+                <svg role="img" width="10" height="10" viewBox="3 3 10 10" aria-label="">
+                  <use href="/icons/_sprite.svg#arrow-page"></use>
+                </svg>
+              </button>
+              <button
+                class="flex h-[34px] w-[34px] items-center justify-center border-r border-gray-100 hover:bg-gray-200"
+              >
+                <svg role="img" width="10" height="10" viewBox="22 3 10 10" aria-label="">
+                  <use href="/icons/_sprite.svg#arrow-page"></use>
+                </svg>
+              </button>
+              <button
+                class="flex h-[34px] w-[34px] items-center justify-center border-r border-gray-100 list__button-pageNumber text-p-base text-content hover:bg-gray-200 bg-gray-200 text-primary"
+              >
+                1
+              </button>
+              <button
+                class="flex h-[34px] w-[34px] items-center justify-center border-r border-gray-100 list__button-pageNumber text-p-base text-content hover:bg-gray-200"
+              >
+                2
+              </button>
+              <button
+                class="flex h-[34px] w-[34px] items-center justify-center border-r border-gray-100 hover:bg-gray-200"
+                id="next-arrow"
+              >
+                <svg role="img" width="10" height="10" viewBox="35 3 10 10" aria-label="">
+                  <use href="/icons/_sprite.svg#arrow-page"></use>
+                </svg>
+              </button>
+              <button
+                class="flex h-[34px] w-[34px] items-center justify-center border-r border-gray-100 hover:bg-gray-200"
+              >
+                <svg role="img" width="10" height="10" viewBox="55 3 10 10" aria-label="">
+                  <use href="/icons/_sprite.svg#arrow-page"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <dialog class="add-cart__popup w-[396px] rounded-2xl px-5 py-6 backdrop:backdrop-brightness-50">
+      <form action="#" class="grid auto-rows-min grid-cols-2 gap-x-2 gap-y-7">
+        <div class="col-span-2 grid">
+          <div class="product__info--template row-start-1">
+            <p class="mb-3 text-l-base text-content" data-id="1r8hagdshf2m48s">[블루보틀] 블렌드 원두 4종</p>
+            <span
+              class="mt-4 text-l-base leading-[30px]"
+              data-discountprice="25000"
+              id="discountPrice"
+              data-img="https://chapsheep.pockethost.io/api/files/qo3tzvf8q99iywt/1r8hagdshf2m48s/product_thumb7_kavgysC08B.jpg"
+            >
+              25,000원
+            </span>
+          </div>
+          <div class="row-start-1 flex h-[30px] w-[90px] self-end justify-self-end border border-gray-200">
+            <button type="button" class="button__minus w-[30px] overflow-hidden">
+              <svg role="img" width="46" height="84" viewBox="8 46 46 84">
+                <use href="/icons/_sprite.svg#minus"></use>
+              </svg>
+            </button>
+            <span class="product__amount inline-block w-[30px] text-center align-top leading-[30px]">1</span>
+            <button type="button" class="button__plus w-[30px] overflow-hidden">
+              <svg role="img" width="46" height="84" viewBox="8 8 46 84">
+                <use href="/icons/_sprite.svg#plus"></use>
+              </svg>
+            </button>
+          </div>
         </div>
         <div class="price__total--template col-span-2 grid gap-y-1">
-            <span class="mt-3.5 align-bottom text-l-base">합계</span>
-            <span class="text-right text-h-xl">25,000원</span>
-            <div class="col-span-2 justify-self-end">
-                <span class="rounded-sm bg-accent-yellow px-2 py-[3px] text-l-sm text-white">적립</span>
-                <span class="inline-block w-32 text-right align-middle text-l-base leading-none">구매 시 13원 적립</span>
-            </div>
+          <span class="mt-3.5 align-bottom text-l-base">합계</span>
+          <span class="text-right text-h-xl">25,000원</span>
+          <div class="col-span-2 justify-self-end">
+            <span class="rounded-sm bg-accent-yellow px-2 py-[3px] text-l-sm text-white">적립</span>
+            <span class="inline-block w-32 text-right align-middle text-l-base leading-none">구매 시 13원 적립</span>
+          </div>
         </div>
-        <button type="reset"
-                class="add-cart__button--closed button__default h-[54px] border border-gray-400 text-content">
-            취소
+        <button
+          type="reset"
+          class="add-cart__button--closed button__default h-[54px] border border-gray-400 text-content"
+        >
+          취소
         </button>
-        <button type="button" class="add-cart__button button--purple__big">
-            장바구니 담기
-        </button>
-    </form>
-</dialog>
-<footer class="mt-7 border border-t-gray-100">
-    <div class="mx-auto my-7 flex w-innerWrapper justify-between text-content">
+        <button type="button" class="add-cart__button button--purple__big">장바구니 담기</button>
+      </form>
+    </dialog>
+    <footer class="mt-7 border border-t-gray-100">
+      <div class="mx-auto my-7 flex w-innerWrapper justify-between text-content">
         <div>
-            <h2 class="test text-h-lg">고객행복센터</h2>
-            <span class="mt-4 text-h-2xl"><a href="#">1644-1107</a></span>
-            <span class="test ml-2 mt-4 inline-block align-top text-l-base">월~토요일 오전 7시 - 오후 6시</span>
-            <ul class="my-5">
-                <li class="flex">
-                    <button type="button" class="button--footer mr-4">
-                        카카오톡 문의
-                    </button>
-                    <div>
-                        <p class="text-p-base">월~토요일 | 오전 7시 - 오후 6시</p>
-                        <p>일/공휴일 | 오전 7시 - 오후 1시</p>
-                    </div>
-                </li>
-                <li class="my-7 flex">
-                    <button type="button" class="button--footer mr-4">1:1 문의</button>
-                    <div>
-                        <p>365일</p>
-                        <p>고객센터 운영시간에 순차적으로 답변드리겠습니다.</p>
-                    </div>
-                </li>
-                <li class="flex">
-                    <a href="#"
-                       target="_blank" class="button--footer mr-4 block text-center">
-                        대량주문 문의
-                    </a>
-                    <div>
-                        <p>월~금요일 | 오전 9시 - 오후 6시</p>
-                        <p>점심시간 | 낮 12시 - 오후 1시</p>
-                    </div>
-                </li>
-            </ul>
-            <p>
-                비회원 문의 :
-                <a href="#" class="text-primary">help@karlycorp.com</a>
-            </p>
-            <p>
-                비회원 대량주문 문의 :
-                <a href="#" class="text-primary">help@karlycorp.com</a>
-            </p>
+          <h2 class="test text-h-lg">고객행복센터</h2>
+          <span class="mt-4 text-h-2xl"><a href="#">1644-1107</a></span>
+          <span class="test ml-2 mt-4 inline-block align-top text-l-base">월~토요일 오전 7시 - 오후 6시</span>
+          <ul class="my-5">
+            <li class="flex">
+              <button type="button" class="button--footer mr-4">카카오톡 문의</button>
+              <div>
+                <p class="text-p-base">월~토요일 | 오전 7시 - 오후 6시</p>
+                <p>일/공휴일 | 오전 7시 - 오후 1시</p>
+              </div>
+            </li>
+            <li class="my-7 flex">
+              <button type="button" class="button--footer mr-4">1:1 문의</button>
+              <div>
+                <p>365일</p>
+                <p>고객센터 운영시간에 순차적으로 답변드리겠습니다.</p>
+              </div>
+            </li>
+            <li class="flex">
+              <a href="#" target="_blank" class="button--footer mr-4 block text-center">대량주문 문의</a>
+              <div>
+                <p>월~금요일 | 오전 9시 - 오후 6시</p>
+                <p>점심시간 | 낮 12시 - 오후 1시</p>
+              </div>
+            </li>
+          </ul>
+          <p>
+            비회원 문의 :
+            <a href="#" class="text-primary">help@karlycorp.com</a>
+          </p>
+          <p>
+            비회원 대량주문 문의 :
+            <a href="#" class="text-primary">help@karlycorp.com</a>
+          </p>
         </div>
         <div>
-            <nav>
-                <ul class="flex gap-x-3 text-p-base">
-                    <li><a href="#">칼리 소개</a></li>
-                    <li><a href="#">칼리 소개 영상</a></li>
-                    <li><a href="#">인재 채용</a></li>
-                    <li><a href="#">이용약관</a></li>
-                    <li><a href="#">개인정보처리방침</a></li>
-                    <li><a href="#">이용안내</a></li>
-                </ul>
-            </nav>
-            <address class="my-7 text-p-sm not-italic">
-                <div>
-                    <span>법인명 (상호) : 주식회사 칼리</span>
-                    <span aria-hidden="true">|</span>
-                    <span>사업자등록번호 : 261-81-23467</span>
-                    <span aria-hidden="true">|</span>
-                    <span><a href="#"
-                             class="text-primary">사업자정보 확인</a></span>
-                </div>
-                <div>
-                    <span>통신판매업 : 제 2018-서울강남-01646호</span>
-                    <span aria-hidden="true">|</span>
-                    <span>개인정보보호책임자 : 이원준</span>
-                </div>
-                <div>
-                    <span>주소 : 서울특별시 강남구 테헤란로 133, 18층(역삼동)</span>
-                    <span aria-hidden="true">|</span>
-                    <span>대표이사 : 김슬아</span>
-                </div>
-                <div>
-                    <span>입점문의 : 입점문의하기</span>
-                    <span aria-hidden="true">|</span>
-                    <span>제휴문의 :
-            <a href="#" class="text-primary">business@karlycorp.com</a></span>
-                </div>
-                <span class="block">채용문의 :
-          <a href="#" class="text-primary">recruit@karlycorp.com</a></span>
-                <span>팩스 : 070 - 7500 - 6098</span>
-            </address>
-            <ul class="flex gap-x-5">
-                <li class="w-[30px] overflow-hidden">
-                    <a href="#" target="_blank">
-                        <svg role="img" width="188" height="30" viewBox="0 0 376 60" aria-label="마켓칼리 네이버블로그 바로가기">
-                            <use href="/icons/_sprite.svg#sns"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="w-[30px] overflow-hidden">
-                    <a href="#" target="_blank">
-                        <img src="https://res.kurly.com/pc/ico/1810/ico_instagram.png" alt="마켓칼리 인스타그램 바로가기">
-                    </a>
-                </li>
-                <li class="w-[30px] overflow-hidden">
-                    <a href="#" target="_blank">
-                        <svg role="img" width="188" height="30" viewBox="158 0 376 60" aria-label="마켓칼리 페이스북 바로가기">
-                            <use href="/icons/_sprite.svg#sns"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="w-[30px] overflow-hidden">
-                    <a href="#" target="_blank">
-                        <svg role="img" width="188" height="30" viewBox="237 0 376 60" aria-label="마켓칼리 네이버포스트 바로가기">
-                            <use href="/icons/_sprite.svg#sns"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="w-[30px] overflow-hidden">
-                    <a href="#" target="_blank">
-                        <svg role="img" width="188" height="30" viewBox="316 0 376 60" aria-label="마켓칼리 유튜브 바로가기">
-                            <use href="/icons/_sprite.svg#sns"></use>
-                        </svg>
-                    </a>
-                </li>
+          <nav>
+            <ul class="flex gap-x-3 text-p-base">
+              <li>
+                <a href="#">칼리 소개</a>
+              </li>
+              <li>
+                <a href="#">칼리 소개 영상</a>
+              </li>
+              <li>
+                <a href="#">인재 채용</a>
+              </li>
+              <li>
+                <a href="#">이용약관</a>
+              </li>
+              <li>
+                <a href="#">개인정보처리방침</a>
+              </li>
+              <li>
+                <a href="#">이용안내</a>
+              </li>
             </ul>
+          </nav>
+          <address class="my-7 text-p-sm not-italic">
+            <div>
+              <span>법인명 (상호) : 주식회사 칼리</span>
+              <span aria-hidden="true">|</span>
+              <span>사업자등록번호 : 261-81-23467</span>
+              <span aria-hidden="true">|</span>
+              <span><a href="#" class="text-primary">사업자정보 확인</a></span>
+            </div>
+            <div>
+              <span>통신판매업 : 제 2018-서울강남-01646호</span>
+              <span aria-hidden="true">|</span>
+              <span>개인정보보호책임자 : 이원준</span>
+            </div>
+            <div>
+              <span>주소 : 서울특별시 강남구 테헤란로 133, 18층(역삼동)</span>
+              <span aria-hidden="true">|</span>
+              <span>대표이사 : 김슬아</span>
+            </div>
+            <div>
+              <span>입점문의 : 입점문의하기</span>
+              <span aria-hidden="true">|</span>
+              <span>
+                제휴문의 :
+                <a href="#" class="text-primary">business@karlycorp.com</a>
+              </span>
+            </div>
+            <span class="block">
+              채용문의 :
+              <a href="#" class="text-primary">recruit@karlycorp.com</a>
+            </span>
+            <span>팩스 : 070 - 7500 - 6098</span>
+          </address>
+          <ul class="flex gap-x-5">
+            <li class="w-[30px] overflow-hidden">
+              <a href="#" target="_blank">
+                <svg
+                  role="img"
+                  width="188"
+                  height="30"
+                  viewBox="0 0 376 60"
+                  aria-label="마켓칼리 네이버블로그 바로가기"
+                >
+                  <use href="/icons/_sprite.svg#sns"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="w-[30px] overflow-hidden">
+              <a href="#" target="_blank">
+                <img src="https://res.kurly.com/pc/ico/1810/ico_instagram.png" alt="마켓칼리 인스타그램 바로가기" />
+              </a>
+            </li>
+            <li class="w-[30px] overflow-hidden">
+              <a href="#" target="_blank">
+                <svg role="img" width="188" height="30" viewBox="158 0 376 60" aria-label="마켓칼리 페이스북 바로가기">
+                  <use href="/icons/_sprite.svg#sns"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="w-[30px] overflow-hidden">
+              <a href="#" target="_blank">
+                <svg
+                  role="img"
+                  width="188"
+                  height="30"
+                  viewBox="237 0 376 60"
+                  aria-label="마켓칼리 네이버포스트 바로가기"
+                >
+                  <use href="/icons/_sprite.svg#sns"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="w-[30px] overflow-hidden">
+              <a href="#" target="_blank">
+                <svg role="img" width="188" height="30" viewBox="316 0 376 60" aria-label="마켓칼리 유튜브 바로가기">
+                  <use href="/icons/_sprite.svg#sns"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
         </div>
-    </div>
-    <ul class="mx-auto mt-8 flex w-innerWrapper justify-between border-t border-gray-100 pb-7 pt-6 text-[10px] leading-[160%]">
+      </div>
+      <ul
+        class="mx-auto mt-8 flex w-innerWrapper justify-between border-t border-gray-100 pb-7 pt-6 text-[10px] leading-[160%]"
+      >
         <li class="flex gap-x-2">
-            <div class="inline-block w-[34px] overflow-hidden">
-                <svg role="img" width="277" height="36" viewBox="0 0 277 36" aria-label="isms 로고">
-                    <use href="/icons/_sprite.svg#footer"></use>
-                </svg>
-            </div>
-            <div class="w-[180px]">
-                <p>
-                    [인증범위] 마켓칼리 쇼핑몰 서비스 개발 운영(심사받지 않은 물리적
-                    인프라 제외)
-                </p>
-                <p>[유효기간] 2022.01.19 ~ 2025.01.18</p>
-            </div>
+          <div class="inline-block w-[34px] overflow-hidden">
+            <svg role="img" width="277" height="36" viewBox="0 0 277 36" aria-label="isms 로고">
+              <use href="/icons/_sprite.svg#footer"></use>
+            </svg>
+          </div>
+          <div class="w-[180px]">
+            <p>[인증범위] 마켓칼리 쇼핑몰 서비스 개발 운영(심사받지 않은 물리적 인프라 제외)</p>
+            <p>[유효기간] 2022.01.19 ~ 2025.01.18</p>
+          </div>
         </li>
         <li class="flex gap-x-2">
-            <div class="inline-block w-[34px] overflow-hidden">
-                <svg role="img" width="277" height="36" viewBox="58 0 277 36" aria-label="eprivacy plus 로고">
-                    <use href="/icons/_sprite.svg#footer"></use>
-                </svg>
-            </div>
-            <div class="w-[180px]">
-                <p>개인정보보호 우수 웹사이트</p>
-                <p>개인정보처리시스템 인증 (ePRIVACY PLUS)</p>
-            </div>
+          <div class="inline-block w-[34px] overflow-hidden">
+            <svg role="img" width="277" height="36" viewBox="58 0 277 36" aria-label="eprivacy plus 로고">
+              <use href="/icons/_sprite.svg#footer"></use>
+            </svg>
+          </div>
+          <div class="w-[180px]">
+            <p>개인정보보호 우수 웹사이트</p>
+            <p>개인정보처리시스템 인증 (ePRIVACY PLUS)</p>
+          </div>
         </li>
         <li class="flex gap-x-2">
-            <div class="inline-block w-[102px] overflow-hidden">
-                <svg role="img" width="277" height="36" viewBox="115 0 277 36" aria-label="payments 로고">
-                    <use href="/icons/_sprite.svg#footer"></use>
-                </svg>
-            </div>
-            <div class="w-[135px]">
-                <p>토스페이먼츠 구매안전(에스크로) 서비스를 이용하실 수 있습니다.</p>
-            </div>
+          <div class="inline-block w-[102px] overflow-hidden">
+            <svg role="img" width="277" height="36" viewBox="115 0 277 36" aria-label="payments 로고">
+              <use href="/icons/_sprite.svg#footer"></use>
+            </svg>
+          </div>
+          <div class="w-[135px]">
+            <p>토스페이먼츠 구매안전(에스크로) 서비스를 이용하실 수 있습니다.</p>
+          </div>
         </li>
         <li class="flex gap-x-2">
-            <div class="inline-block w-[38px] overflow-hidden">
-                <svg role="img" width="277" height="36" viewBox="240 0 277 36" aria-label="우리은행 로고">
-                    <use href="/icons/_sprite.svg#footer"></use>
-                </svg>
-            </div>
-            <div class="w-[205px]">
-                <p>
-                    고객님이 현금으로 결제한 금액에 대해 우리은행과 채무지급보증 계약을
-                    체결하여 안전거래를 보장하고 있습니다.
-                </p>
-            </div>
+          <div class="inline-block w-[38px] overflow-hidden">
+            <svg role="img" width="277" height="36" viewBox="240 0 277 36" aria-label="우리은행 로고">
+              <use href="/icons/_sprite.svg#footer"></use>
+            </svg>
+          </div>
+          <div class="w-[205px]">
+            <p>
+              고객님이 현금으로 결제한 금액에 대해 우리은행과 채무지급보증 계약을 체결하여 안전거래를 보장하고 있습니다.
+            </p>
+          </div>
         </li>
-    </ul>
-    <div class="min-w-max bg-gray-50 pb-7 pt-5 text-center text-[10px] leading-[160%] text-gray-400">
+      </ul>
+      <div class="min-w-max bg-gray-50 pb-7 pt-5 text-center text-[10px] leading-[160%] text-gray-400">
         <p>
-            마켓칼리에서 판매되는 상품 중에는 마켓칼리에 입점한 개별 판매자가 판매하는
-            마켓플레이스(오픈마켓) 상품이 포함되어 있습니다.
+          마켓칼리에서 판매되는 상품 중에는 마켓칼리에 입점한 개별 판매자가 판매하는 마켓플레이스(오픈마켓) 상품이
+          포함되어 있습니다.
         </p>
         <p>
-            마켓플레이스(오픈마켓) 상품의 경우 칼리는 통신판매중개자로서 통신판매의
-            당사자가 아닙니다. 칼리는 해당 상품의 주문, 품질, 교환/환불 등 의무와
-            책임을 부담하지 않습니다.
+          마켓플레이스(오픈마켓) 상품의 경우 칼리는 통신판매중개자로서 통신판매의 당사자가 아닙니다. 칼리는 해당 상품의
+          주문, 품질, 교환/환불 등 의무와 책임을 부담하지 않습니다.
         </p>
         <small class="mt-2 capitalize">© karly corp. all rights reserved</small>
-    </div>
-</footer>
-</body>
+      </div>
+    </footer>
+  </body>
 </html>
