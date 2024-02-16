@@ -59,7 +59,9 @@ const 한정수량 = () => {
  * @param {{
  *  isKalryOnly: boolean
  *  is한정수량: boolean
- *  is샛별배송: boolean,
+ *  is샛별배송: boolean
+ *  할인률: number
+ *  price: number
  * }} props
  * @returns
  */
@@ -73,8 +75,8 @@ const ProductBox = (props) => {
             {props.is샛별배송 && <샛별배송 />}
             <타이틀 />
             <div className="flex gap-2">
-              <할인률 />
-              <가격 />
+              {props.할인률 && <할인률 />}
+              <가격>{props.price}</가격>
             </div>
 
             <할인가격 />
