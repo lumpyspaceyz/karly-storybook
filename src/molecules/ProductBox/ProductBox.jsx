@@ -1,3 +1,5 @@
+import 가격 from './가격';
+
 const ProductImg = () => {
   return (
     <div className="mb-4 h-80">
@@ -32,29 +34,54 @@ const 타이틀 = () => {
   return <p className="text-p-base text-content">[KF365] 간편한 국산 손질 오징어 1kg</p>;
 };
 
-const ProductBox = () => {
+const 할인률 = () => {
+  return (
+    <p className="text-l-lg text-accent-yellow">
+      2<span>%</span>
+    </p>
+  );
+};
+
+const 할인가격 = () => {
+  return <span className="text-p-sm text-gray-400 line-through">21,500 원</span>;
+};
+
+const 컬리온리 = () => {
+  return <span className="rounded bg-gray-100 p-1 text-l-sm text-primary">Karly Only</span>;
+};
+
+const 한정수량 = () => {
+  return <span className="rounded bg-gray-100 p-1 text-l-sm text-content">한정수량</span>;
+};
+
+/**
+ *
+ * @param {{
+ *  isKalryOnly: boolean
+ *  is한정수량: boolean
+ *  is샛별배송: boolean,
+ * }} props
+ * @returns
+ */
+const ProductBox = (props) => {
   return (
     <div className="w-productBox-width h-productBox-height list_div-productBox">
       <a href="#" className="a__product">
         <div className="relative">
           <ProductImg />
           <div className="info flex flex-col gap-2">
-            <샛별배송 />
+            {props.is샛별배송 && <샛별배송 />}
             <타이틀 />
             <div className="flex gap-2">
-              <p className="text-l-lg text-accent-yellow">
-                2<span>%</span>
-              </p>
-              <p className="text-l-lg text-content">
-                21,070
-                <span>원</span>
-              </p>
+              <할인률 />
+              <가격 />
             </div>
-            <span className="text-p-sm text-gray-400 line-through">21,500 원</span>
+
+            <할인가격 />
             <p className="text-p-sm text-gray-400">바로 요리할 수 있어 간편</p>
             <div className="flex gap-2">
-              <span className="rounded bg-gray-100 p-1 text-l-sm text-primary">Karly Only</span>
-              <span className="rounded bg-gray-100 p-1 text-l-sm text-content">한정수량</span>
+              {props.isKalryOnly && <컬리온리 />}
+              {props.is한정수량 && <한정수량 />}
             </div>
           </div>
           <CartButton />
