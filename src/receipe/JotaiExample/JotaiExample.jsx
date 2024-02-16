@@ -1,5 +1,5 @@
 import { useAtom } from 'jotai';
-import { counterAtom, useMinusCount, usePlusCount } from './counterStore';
+import { counterAtom } from './counterStore';
 
 const TestComponent = () => {
   const [count] = useAtom(counterAtom);
@@ -8,13 +8,14 @@ const TestComponent = () => {
 };
 
 const JotaiExample = () => {
+  // 액션으로 커스텀 훅 만들기는 생각보다 어ㅇ
   const [count, setCount] = useAtom(counterAtom);
 
   return (
     <>
-      <button onClick={() => usePlusCount()}>+</button>
+      <button onClick={() => setCount(count + 1)}>+</button>
       <span>{count}</span>
-      <button onClick={() => useMinusCount()}>-</button>
+      <button onClick={() => setCount(count - 1)}>-</button>
       <TestComponent />
       <TestComponent />
       <TestComponent />
