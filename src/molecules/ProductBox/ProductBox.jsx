@@ -56,6 +56,16 @@ const 한정수량 = () => {
 
 /**
  *
+ * @param {number} 원래가격
+ * @param {number} 할인률
+ * @returns
+ */
+const get할인가격 = (원래가격, 할인률) => {
+  return 원래가격 - 원래가격 * 할인률;
+};
+
+/**
+ *
  * @param {{
  *  isKalryOnly: boolean
  *  is한정수량: boolean
@@ -78,7 +88,6 @@ const ProductBox = (props) => {
               {props.할인률 && <할인률 />}
               <가격>{props.price}</가격>
             </div>
-
             <할인가격 />
             <p className="text-p-sm text-gray-400">바로 요리할 수 있어 간편</p>
             <div className="flex gap-2">
