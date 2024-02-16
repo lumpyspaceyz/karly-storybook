@@ -8,7 +8,7 @@ const TestComponent = () => {
 };
 
 const JotaiExample = () => {
-  // 액션으로 커스텀 훅 만들기는 생각보다 어ㅇ
+  // 액션으로 커스텀 훅 만들기는 생각보다 어렵네요. 이 정도로 써 주세요 ^^;;;
   const [count, setCount] = useAtom(counterAtom);
 
   return (
