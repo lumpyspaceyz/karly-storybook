@@ -3,6 +3,34 @@ import ProductBox from '@/molecules/ProductBox/ProductBox';
 import Sorting from '@/molecules/Sorting/Sorting';
 import 별 from '@/molecules/별/별';
 import 헤드라인 from '@/molecules/헤드라인/헤드라인';
+import { useQuery } from '@tanstack/react-query';
+
+const ProductList = () => {
+  const { isLoading, data } = useQuery({
+    queryKey: ['list'],
+    queryFn: () => fetch('http://localhost:3000/products').then((res) => res.json()),
+  });
+
+  if (isLoading) {
+    return <>로딩중</>;
+  }
+
+  return (
+    <>
+      {data.map((item) => {
+        return (
+          <ProductBox
+            isKalryOnly={item.isKarlyOnly}
+            is한정수량={item.isLimited}
+            is샛별배송={false}
+            할인률={item.saleRate}
+            price={item.price}
+          />
+        );
+      })}
+    </>
+  );
+};
 
 const Contents = () => {
   return (
@@ -71,8 +99,7 @@ const Contents = () => {
             <div className="list__grid mb-6 grid grid-cols-3 gap-x-[18px] gap-y-6">
               <별 />
               <Sorting />
-
-              <ProductBox isKalryOnly={false} is한정수량={false} is샛별배송={false} 할인률={0} price={0} />
+              <ProductList />
             </div>
             <div className="flex h-[600px] flex-col items-center justify-center" id="no-item">
               <svg role="img" width="72" height="72" viewBox="0 0 36 36" aria-label="">
