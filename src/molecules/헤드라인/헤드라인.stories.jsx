@@ -7,7 +7,8 @@ export default {
 
 /**@type{import('@storybook/react').StoryObj} */
 export const 기본표시 = {
+  // props를 스토리북에서는 args 라고 부릅니다.
   args: {
-    children: '테스트지롱'
-  }
+    children: '테스트지롱',
+  },
 };

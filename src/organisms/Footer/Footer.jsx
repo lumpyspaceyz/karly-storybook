@@ -4,25 +4,33 @@ const Footer = () => {
       <div className="mx-auto my-7 flex w-innerWrapper justify-between text-content">
         <div>
           <h2 className="test text-h-lg">고객행복센터</h2>
-          <span className="mt-4 text-h-2xl"><a href="#">1644-1107</a></span>
+          <span className="mt-4 text-h-2xl">
+            <a href="#">1644-1107</a>
+          </span>
           <span className="test ml-2 mt-4 inline-block align-top text-l-base">월~토요일 오전 7시 - 오후 6시</span>
           <ul className="my-5">
             <li className="flex">
-              <button type="button" className="button--footer mr-4">카카오톡 문의</button>
+              <button type="button" className="button--footer mr-4">
+                카카오톡 문의
+              </button>
               <div>
                 <p className="text-p-base">월~토요일 | 오전 7시 - 오후 6시</p>
                 <p>일/공휴일 | 오전 7시 - 오후 1시</p>
               </div>
             </li>
             <li className="my-7 flex">
-              <button type="button" className="button--footer mr-4">1:1 문의</button>
+              <button type="button" className="button--footer mr-4">
+                1:1 문의
+              </button>
               <div>
                 <p>365일</p>
                 <p>고객센터 운영시간에 순차적으로 답변드리겠습니다.</p>
               </div>
             </li>
             <li className="flex">
-              <a href="#" target="_blank" className="button--footer mr-4 block text-center">대량주문 문의</a>
+              <a href="#" target="_blank" className="button--footer mr-4 block text-center">
+                대량주문 문의
+              </a>
               <div>
                 <p>월~금요일 | 오전 9시 - 오후 6시</p>
                 <p>점심시간 | 낮 12시 - 오후 1시</p>
@@ -31,11 +39,15 @@ const Footer = () => {
           </ul>
           <p>
             비회원 문의 :
-            <a href="#" className="text-primary">help@karlycorp.com</a>
+            <a href="#" className="text-primary">
+              help@karlycorp.com
+            </a>
           </p>
           <p>
             비회원 대량주문 문의 :
-            <a href="#" className="text-primary">help@karlycorp.com</a>
+            <a href="#" className="text-primary">
+              help@karlycorp.com
+            </a>
           </p>
         </div>
         <div>
@@ -67,7 +79,11 @@ const Footer = () => {
               <span aria-hidden="true">|</span>
               <span>사업자등록번호 : 261-81-23467</span>
               <span aria-hidden="true">|</span>
-              <span><a href="#" className="text-primary">사업자정보 확인</a></span>
+              <span>
+                <a href="#" className="text-primary">
+                  사업자정보 확인
+                </a>
+              </span>
             </div>
             <div>
               <span>통신판매업 : 제 2018-서울강남-01646호</span>
@@ -84,20 +100,30 @@ const Footer = () => {
               <span aria-hidden="true">|</span>
               <span>
                 제휴문의 :
-                <a href="#" className="text-primary">business@karlycorp.com</a>
+                <a href="#" className="text-primary">
+                  business@karlycorp.com
+                </a>
               </span>
             </div>
             <span className="block">
               채용문의 :
-              <a href="#" className="text-primary">recruit@karlycorp.com</a>
+              <a href="#" className="text-primary">
+                recruit@karlycorp.com
+              </a>
             </span>
             <span>팩스 : 070 - 7500 - 6098</span>
           </address>
           <ul className="flex gap-x-5">
             <li className="w-[30px] overflow-hidden">
               <a href="#" target="_blank">
-                <svg role="img" width={188} height={30} viewBox="0 0 376 60" aria-label="마켓칼리 네이버블로그 바로가기">
-                  <use href="/icons/_sprite.svg#sns" />
+                <svg
+                  role="img"
+                  width="188"
+                  height="30"
+                  viewBox="0 0 376 60"
+                  aria-label="마켓칼리 네이버블로그 바로가기"
+                >
+                  <use href="/icons/_sprite.svg#sns"></use>
                 </svg>
               </a>
             </li>
@@ -108,22 +134,28 @@ const Footer = () => {
             </li>
             <li className="w-[30px] overflow-hidden">
               <a href="#" target="_blank">
-                <svg role="img" width={188} height={30} viewBox="158 0 376 60" aria-label="마켓칼리 페이스북 바로가기">
-                  <use href="/icons/_sprite.svg#sns" />
+                <svg role="img" width="188" height="30" viewBox="158 0 376 60" aria-label="마켓칼리 페이스북 바로가기">
+                  <use href="/icons/_sprite.svg#sns"></use>
                 </svg>
               </a>
             </li>
             <li className="w-[30px] overflow-hidden">
               <a href="#" target="_blank">
-                <svg role="img" width={188} height={30} viewBox="237 0 376 60" aria-label="마켓칼리 네이버포스트 바로가기">
-                  <use href="/icons/_sprite.svg#sns" />
+                <svg
+                  role="img"
+                  width="188"
+                  height="30"
+                  viewBox="237 0 376 60"
+                  aria-label="마켓칼리 네이버포스트 바로가기"
+                >
+                  <use href="/icons/_sprite.svg#sns"></use>
                 </svg>
               </a>
             </li>
             <li className="w-[30px] overflow-hidden">
               <a href="#" target="_blank">
-                <svg role="img" width={188} height={30} viewBox="316 0 376 60" aria-label="마켓칼리 유튜브 바로가기">
-                  <use href="/icons/_sprite.svg#sns" />
+                <svg role="img" width="188" height="30" viewBox="316 0 376 60" aria-label="마켓칼리 유튜브 바로가기">
+                  <use href="/icons/_sprite.svg#sns"></use>
                 </svg>
               </a>
             </li>
@@ -133,8 +165,8 @@ const Footer = () => {
       <ul className="mx-auto mt-8 flex w-innerWrapper justify-between border-t border-gray-100 pb-7 pt-6 text-[10px] leading-[160%]">
         <li className="flex gap-x-2">
           <div className="inline-block w-[34px] overflow-hidden">
-            <svg role="img" width={277} height={36} viewBox="0 0 277 36" aria-label="isms 로고">
-              <use href="/icons/_sprite.svg#footer" />
+            <svg role="img" width="277" height="36" viewBox="0 0 277 36" aria-label="isms 로고">
+              <use href="/icons/_sprite.svg#footer"></use>
             </svg>
           </div>
           <div className="w-[180px]">
@@ -144,8 +176,8 @@ const Footer = () => {
         </li>
         <li className="flex gap-x-2">
           <div className="inline-block w-[34px] overflow-hidden">
-            <svg role="img" width={277} height={36} viewBox="58 0 277 36" aria-label="eprivacy plus 로고">
-              <use href="/icons/_sprite.svg#footer" />
+            <svg role="img" width="277" height="36" viewBox="58 0 277 36" aria-label="eprivacy plus 로고">
+              <use href="/icons/_sprite.svg#footer"></use>
             </svg>
           </div>
           <div className="w-[180px]">
@@ -155,8 +187,8 @@ const Footer = () => {
         </li>
         <li className="flex gap-x-2">
           <div className="inline-block w-[102px] overflow-hidden">
-            <svg role="img" width={277} height={36} viewBox="115 0 277 36" aria-label="payments 로고">
-              <use href="/icons/_sprite.svg#footer" />
+            <svg role="img" width="277" height="36" viewBox="115 0 277 36" aria-label="payments 로고">
+              <use href="/icons/_sprite.svg#footer"></use>
             </svg>
           </div>
           <div className="w-[135px]">
@@ -165,8 +197,8 @@ const Footer = () => {
         </li>
         <li className="flex gap-x-2">
           <div className="inline-block w-[38px] overflow-hidden">
-            <svg role="img" width={277} height={36} viewBox="240 0 277 36" aria-label="우리은행 로고">
-              <use href="/icons/_sprite.svg#footer" />
+            <svg role="img" width="277" height="36" viewBox="240 0 277 36" aria-label="우리은행 로고">
+              <use href="/icons/_sprite.svg#footer"></use>
             </svg>
           </div>
           <div className="w-[205px]">

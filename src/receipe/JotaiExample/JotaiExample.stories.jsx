@@ -1,8 +1,8 @@
-import Filters from './Filters';
+import JotaiExample from './JotaiExample';
 
 /**@type{import('@storybook/react').Meta} */
 export default {
-  component: Filters,
+  component: JotaiExample,
 };
 
 /**@type{import('@storybook/react').StoryObj} */
